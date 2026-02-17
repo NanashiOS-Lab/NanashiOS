@@ -19,7 +19,7 @@ def main():
 
         while True:
             try:
-                user_input = input("SG195220@maws:~$ ")
+                user_input = input("Nanashi@maws:~$ ")
                 if user_input.lower() in ['exit', 'quit']:
                     break
                 result = waka.process_query(user_input)
