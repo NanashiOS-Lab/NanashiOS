@@ -3,127 +3,26 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>MAWS | Sovereign OS — Schémas du Protocole</title>
+    <title>MAWS — Sovereign OS | Schémas du Protocole</title>
+    <meta name="description" content="Schémas complets du protocole MAWS : architecture souveraine, split inference, obfuscation ε, tunnel USL-EDL, GHOST-ALPHA Vault, agents Ghosts (Blinky, Inky, Pinky), Proof of Intelligence. NANASHI PROJECT — Sovereign OS pour IA autonome (2026).">
     <script src="https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.min.js"></script>
     <style>
-        :root {
-            --neon-cyan: #00f2ff;
-            --neon-purple: #bc13fe;
-            --ghost-red: #ff3131;
-            --secure-green: #00ff9d;
-            --bg: #030307;
-            --glass: rgba(20, 20, 35, 0.75);
-        }
-        body {
-            background: var(--bg);
-            color: #d0d0d0;
-            font-family: 'SF Mono', 'Fira Code', monospace;
-            margin: 0;
-            padding: 0;
-            background-image: 
-                linear-gradient(rgba(0,242,255,0.008) 1px, transparent 1px),
-                linear-gradient(90deg, rgba(188,19,254,0.008) 1px, transparent 1px);
-            background-size: 60px 60px;
-        }
-
-        body::before {
-            content: "";
-            position: fixed;
-            inset: 0;
-            background: repeating-linear-gradient(
-                0deg,
-                transparent,
-                transparent 2px,
-                rgba(0,242,255,0.03) 2px,
-                rgba(0,242,255,0.03) 4px
-            );
-            pointer-events: none;
-            z-index: 9999;
-        }
-
-        header {
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-            background: rgba(5,5,12,0.92);
-            backdrop-filter: blur(16px);
-            border-bottom: 1px solid var(--neon-purple);
-            padding: 20px 24px;
-            text-align: center;
-        }
-        h1 {
-            margin: 0;
-            font-size: 2.2rem;
-            color: var(--neon-cyan);
-            text-shadow: 0 0 25px var(--neon-cyan);
-            letter-spacing: 6px;
-        }
-        .subtitle {
-            font-size: 0.9rem;
-            color: var(--neon-purple);
-            margin-top: 8px;
-            opacity: 0.9;
-        }
-
-        .container {
-            max-width: 1280px;
-            margin: 40px auto;
-            padding: 0 20px;
-        }
-
-        .figure {
-            background: var(--glass);
-            backdrop-filter: blur(20px);
-            border: 1px solid rgba(0,242,255,0.25);
-            border-radius: 20px;
-            padding: 32px 28px;
-            margin-bottom: 80px;
-            box-shadow: 0 0 60px rgba(0,242,255,0.15);
-        }
-
-        .figure h2 {
-            text-align: center;
-            color: var(--neon-cyan);
-            font-size: 1.4rem;
-            margin: 0 0 32px;
-            text-transform: uppercase;
-            letter-spacing: 4px;
-            text-shadow: 0 0 20px var(--neon-cyan);
-        }
-
-        .mermaid-container {
-            background: #0b0b15;
-            padding: 32px;
-            border-radius: 16px;
-            border: 1px solid rgba(188,19,254,0.35);
-            overflow: hidden;
-        }
-
-        .tunnel-stream {
-            height: 10px;
-            background: #111118;
-            border-radius: 6px;
-            position: relative;
-            overflow: hidden;
-            margin: 35px 0;
-            box-shadow: inset 0 0 35px rgba(0,0,0,0.9);
-        }
-        .packet {
-            position: absolute;
-            height: 100%;
-            width: 28px;
-            background: linear-gradient(90deg, #00f2ff, #bc13fe, #00f2ff);
-            box-shadow: 0 0 35px #00f2ff;
-            animation: travel 1.6s linear infinite;
-        }
+        :root { --neon-cyan: #00f2ff; --neon-purple: #bc13fe; --ghost-red: #ff3131; --bg: #030307; --glass: rgba(20, 20, 35, 0.75); }
+        body { background: var(--bg); color: #d0d0d0; font-family: 'SF Mono', 'Fira Code', monospace; margin: 0; padding: 0; background-image: linear-gradient(rgba(0,242,255,0.008) 1px, transparent 1px), linear-gradient(90deg, rgba(188,19,254,0.008) 1px, transparent 1px); background-size: 60px 60px; }
+        body::before { content: ""; position: fixed; inset: 0; background: repeating-linear-gradient(0deg, transparent, transparent 2px, rgba(0,242,255,0.03) 2px, rgba(0,242,255,0.03) 4px); pointer-events: none; z-index: 9999; }
+        header { position: sticky; top: 0; z-index: 1000; background: rgba(5,5,12,0.92); backdrop-filter: blur(16px); border-bottom: 1px solid var(--neon-purple); padding: 20px 24px; text-align: center; }
+        h1 { margin: 0; font-size: 2.2rem; color: var(--neon-cyan); text-shadow: 0 0 25px var(--neon-cyan); letter-spacing: 6px; }
+        .subtitle { font-size: 0.9rem; color: var(--neon-purple); margin-top: 8px; opacity: 0.9; }
+        .container { max-width: 1280px; margin: 40px auto; padding: 0 20px; }
+        .figure { background: var(--glass); backdrop-filter: blur(20px); border: 1px solid rgba(0,242,255,0.25); border-radius: 20px; padding: 32px 28px; margin-bottom: 80px; box-shadow: 0 0 60px rgba(0,242,255,0.15); }
+        .figure h2 { text-align: center; color: var(--neon-cyan); font-size: 1.4rem; margin: 0 0 32px; text-transform: uppercase; letter-spacing: 4px; text-shadow: 0 0 20px var(--neon-cyan); }
+        .mermaid-container { background: #0b0b15; padding: 32px; border-radius: 16px; border: 1px solid rgba(188,19,254,0.35); overflow: hidden; }
+        .tunnel-stream { height: 10px; background: #111118; border-radius: 6px; position: relative; overflow: hidden; margin: 35px 0; box-shadow: inset 0 0 35px rgba(0,0,0,0.9); }
+        .packet { position: absolute; height: 100%; width: 28px; background: linear-gradient(90deg, #00f2ff, #bc13fe, #00f2ff); box-shadow: 0 0 35px #00f2ff; animation: travel 1.6s linear infinite; }
         .packet2 { animation-delay: 0.45s; }
         .packet3 { animation-delay: 0.9s; }
         @keyframes travel { from { left: -60px; } to { left: 110%; } }
-
-        @media (max-width: 768px) {
-            .figure { padding: 24px 18px; margin-bottom: 60px; }
-            h1 { font-size: 1.8rem; }
-        }
+        @media (max-width: 768px) { .figure { padding: 24px 18px; margin-bottom: 60px; } h1 { font-size: 1.8rem; } }
     </style>
 </head>
 <body>
@@ -297,10 +196,8 @@
             </div>
         </div>
 
-    </div>
+ </div>
 
-    <script>
-        mermaid.initialize({ startOnLoad: true, theme: 'dark', securityLevel: 'loose' });
-    </script>
-</body>
-</html>
+ <script>
+     mermaid.initialize({ startOnLoad: true, theme: 'dark', securityLevel: 'loose' });
+ </script>
