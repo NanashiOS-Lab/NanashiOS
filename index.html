@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>MAWS | Sovereign OS — Schémas du Protocole</title>
+    <script src="https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.min.js"></script>
+    <style>
+        :root {
+            --neon-cyan: #00f2ff;
+            --neon-purple: #bc13fe;
+            --ghost-red: #ff3131;
+            --secure-green: #00ff9d;
+            --bg: #030307;
+            --glass: rgba(20, 20, 35, 0.75);
+        }
+        body {
+            background: var(--bg);
+            color: #d0d0d0;
+            font-family: 'SF Mono', 'Fira Code', monospace;
+            margin: 0;
+            padding: 0;
+            background-image: 
+                linear-gradient(rgba(0,242,255,0.008) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(188,19,254,0.008) 1px, transparent 1px);
+            background-size: 60px 60px;
+        }
+
+        body::before {
+            content: "";
+            position: fixed;
+            inset: 0;
+            background: repeating-linear-gradient(
+                0deg,
+                transparent,
+                transparent 2px,
+                rgba(0,242,255,0.03) 2px,
+                rgba(0,242,255,0.03) 4px
+            );
+            pointer-events: none;
+            z-index: 9999;
+        }
+
+        header {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            background: rgba(5,5,12,0.92);
+            backdrop-filter: blur(16px);
+            border-bottom: 1px solid var(--neon-purple);
+            padding: 20px 24px;
+            text-align: center;
+        }
+        h1 {
+            margin: 0;
+            font-size: 2.2rem;
+            color: var(--neon-cyan);
+            text-shadow: 0 0 25px var(--neon-cyan);
+            letter-spacing: 6px;
+        }
+        .subtitle {
+            font-size: 0.9rem;
+            color: var(--neon-purple);
+            margin-top: 8px;
+            opacity: 0.9;
+        }
+
+        .container {
+            max-width: 1280px;
+            margin: 40px auto;
+            padding: 0 20px;
+        }
+
+        .figure {
+            background: var(--glass);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(0,242,255,0.25);
+            border-radius: 20px;
+            padding: 32px 28px;
+            margin-bottom: 80px;
+            box-shadow: 0 0 60px rgba(0,242,255,0.15);
+        }
+
+        .figure h2 {
+            text-align: center;
+            color: var(--neon-cyan);
+            font-size: 1.4rem;
+            margin: 0 0 32px;
+            text-transform: uppercase;
+            letter-spacing: 4px;
+            text-shadow: 0 0 20px var(--neon-cyan);
+        }
+
+        .mermaid-container {
+            background: #0b0b15;
+            padding: 32px;
+            border-radius: 16px;
+            border: 1px solid rgba(188,19,254,0.35);
+            overflow: hidden;
+        }
+
+        .tunnel-stream {
+            height: 10px;
+            background: #111118;
+            border-radius: 6px;
+            position: relative;
+            overflow: hidden;
+            margin: 35px 0;
+            box-shadow: inset 0 0 35px rgba(0,0,0,0.9);
+        }
+        .packet {
+            position: absolute;
+            height: 100%;
+            width: 28px;
+            background: linear-gradient(90deg, #00f2ff, #bc13fe, #00f2ff);
+            box-shadow: 0 0 35px #00f2ff;
+            animation: travel 1.6s linear infinite;
+        }
+        .packet2 { animation-delay: 0.45s; }
+        .packet3 { animation-delay: 0.9s; }
+        @keyframes travel { from { left: -60px; } to { left: 110%; } }
+
+        @media (max-width: 768px) {
+            .figure { padding: 24px 18px; margin-bottom: 60px; }
+            h1 { font-size: 1.8rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div>
+            <h1>MAWS</h1>
+            <div class="subtitle">Schémas du Protocole — Sovereign OS</div>
+        </div>
+    </header>
+
+    <div class="container">
+
+        <!-- FIGURE 1 -->
+        <div class="figure">
+            <h2>FIGURE 1 — ARCHITECTURE SOUVERAINE END-TO-END</h2>
+            <div class="mermaid-container">
+                <div class="mermaid">
+                    flowchart TD
+                        A["👤 NANASHI<br/>MASTER NODE<br/>WAKA-ENGINE + GHOST-ALPHA"] --> B["🔐 TRUST BOUNDARY"]
+                        B --> C["🔗 TUNNEL USL-EDL<br/>AES-GCM + ε-NOISE"]
+                        C --> D["🌐 WORKER HIVE MUMEI<br/>ZERO KNOWLEDGE"]
+                        D -->|"DE-NOISING (-ε)"| A
+                        style A fill:#001122,stroke:#00f2ff,stroke-width:4px,color:#fff
+                        style D fill:#002211,stroke:#00ff9d,stroke-width:4px,color:#fff
+                        style C fill:#220033,stroke:#bc13fe,stroke-width:4px,color:#fff
+                </div>
+            </div>
+        </div>
+
+        <!-- FIGURE 2 -->
+        <div class="figure">
+            <h2>FIGURE 2 — SPLIT INFERENCE & INJECTION DE BRUIT</h2>
+            <div class="mermaid-container">
+                <div class="mermaid">
+                    flowchart TD
+                        INPUT["📥 INPUT<br/>Données originales"] --> SPLIT["🔀 SPLIT"]
+                        SPLIT -->|"+ ε (obfuscation)"| WA["WORKER A<br/>Unsecure"]
+                        SPLIT -->|"+ ε (obfuscation)"| WB["WORKER B<br/>Unsecure"]
+                        WA & WB --> DENOISE["🧠 DE-NOISING<br/>(-ε avec clé privée)"]
+                        style SPLIT fill:#440066,stroke:#bc13fe,stroke-width:4px
+                        style DENOISE fill:#004422,stroke:#00ff9d,stroke-width:4px
+                </div>
+            </div>
+        </div>
+
+        <!-- FIGURE 3 -->
+        <div class="figure">
+            <h2>FIGURE 3 — ÉCOSYSTÈME CIRCULAIRE MAWS</h2>
+            <div class="mermaid-container">
+                <div class="mermaid">
+                    graph TD
+                        NANASHI["👤 NANASHI CORE"] <--> VAULT["🗄️ GHOST-ALPHA VAULT"]
+                        NANASHI --> AGENTS["👻 AGENTS GHOSTS"]
+                        AGENTS --> TUNNEL["🔗 TUNNEL USL-EDL"]
+                        TUNNEL --> MUMEI["🌐 LAYER MUMEI"]
+                        MUMEI -->|"RETOUR SÉCURISÉ"| NANASHI
+                        style NANASHI fill:#001122,stroke:#00f2ff,stroke-width:4px,color:#fff
+                </div>
+            </div>
+        </div>
+
+        <!-- FIGURE 4 -->
+        <div class="figure">
+            <h2>FIGURE 4 — GHOST-ALPHA CONFINEMENT</h2>
+            <div class="mermaid-container">
+                <div class="mermaid">
+                    flowchart LR
+                        MINER["MINER<br/>Inference + Noise"] --> VALID["VALIDATOR<br/>Vérifie sans voir"]
+                        VALID --> CONS["CONSENSUS MUMEI<br/>Proof of Intelligence"]
+                        style MINER fill:#440066,stroke:#bc13fe
+                        style CONS fill:#001122,stroke:#00f2ff
+                </div>
+            </div>
+        </div>
+
+        <!-- FIGURE 5 -->
+        <div class="figure">
+            <h2>FIGURE 5 — ROADMAP VISUELLE 2026</h2>
+            <div class="mermaid-container">
+                <div class="mermaid">
+                    timeline
+                        title ROADMAP MAWS 2026
+                        section Q1
+                            MVP local + UI
+                        section Q2
+                            Testnet + Agents Ghosts
+                        section Q3
+                            App iOS + ZK PoI
+                        section Q4
+                            Mainnet + Sovereign OS complet
+                </div>
+            </div>
+        </div>
+
+        <!-- FIGURE 6 -->
+        <div class="figure">
+            <h2>FIGURE 6 — LAYER MUMEI (Couche Publique)</h2>
+            <div class="mermaid-container">
+                <div class="mermaid">
+                    graph LR
+                        TUNNEL["PAQUETS OBFUSQUÉS"] --> SPLIT["🔀 SPLIT"]
+                        SPLIT --> W1["LLM A"]
+                        SPLIT --> W2["LLM B"]
+                        SPLIT --> W3["LLM C"]
+                        SPLIT --> W4["LLM D"]
+                        W1 & W2 & W3 & W4 --> OUTPUT["OUTPUT RECONSTITUÉ"]
+                        OUTPUT --> NANASHI["NANASHI CORE"]
+                </div>
+            </div>
+        </div>
+
+        <!-- FIGURE 7 -->
+        <div class="figure">
+            <h2>FIGURE 7 — OVERVIEW SYNTHÉTIQUE MAWS (NANASHI PROJECT)</h2>
+            <div class="mermaid-container">
+                <div class="mermaid">
+                    graph LR
+                        NANASHI["👤 NANASHI CORE"] -- "Données claires →" --> WAKA["WAKA-ENGINE<br/>main.py"]
+                        NANASHI -- "Protection →" --> AGENTS["AGENTS GHOSTS<br/>Blinky Inky Pinky"]
+                        NANASHI -- "Confinement" --> VAULT["GHOST-ALPHA VAULT"]
+                        NANASHI -- "Obfuscation →" --> TUNNEL["TUNNEL USL-EDL<br/>AES-GCM + ε"]
+                        TUNNEL -- "Retour débruité ←" --> MUMEI["LAYER MUMEI<br/>Split Inference ZERO KNOWLEDGE"]
+                        MUMEI -- "Consensus" --> CONSENSUS["MUMEI CONSENSUS<br/>Proof of Intelligence"]
+                        style NANASHI fill:#001122,stroke:#00f2ff,stroke-width:5px,color:#fff
+                        style VAULT fill:#440033,stroke:#bc13fe,stroke-dasharray:6 4
+                        style TUNNEL fill:#111122,stroke:#00f2ff
+                        style CONSENSUS fill:#002211,stroke:#00ff9d
+                </div>
+            </div>
+        </div>
+
+        <!-- FIGURE 8 -->
+        <div class="figure">
+            <h2>FIGURE 8 — WAKA-ENGINE</h2>
+            <div class="mermaid-container">
+                <div class="mermaid">
+                    flowchart TD
+                        A["NANASHI INTERFACE"] --> B["MAIN.PY"]
+                        B --> C["CLASSIFICATION SENSIBILITÉ"]
+                        C -->|HAUT| D["GHOST-ALPHA VAULT"]
+                        C -->|MOYEN| E["ε-NOISE + TUNNEL"]
+                        C -->|BAS| F["SPLIT DIRECT"]
+                        D & E & F --> G["RETOUR SÉCURISÉ"]
+                        G --> A
+                </div>
+            </div>
+        </div>
+
+        <!-- FIGURE 9 -->
+        <div class="figure">
+            <h2>FIGURE 9 — AGENTS GHOSTS SWARM</h2>
+            <div class="mermaid-container">
+                <div class="mermaid">
+                    graph LR
+                        subgraph "GHOST SWARM"
+                            BLINKY["BLINKY<br/>Synchronisation"]
+                            INKY["INKY<br/>Bruit ε"]
+                            PINKY["PINKY<br/>Purge logs"]
+                        end
+                        Vault[("🗄️ GHOST-ALPHA VAULT")]
+                        Nanashi["👤 NANASHI"]
+                        Nanashi <--> Vault
+                        Vault --> BLINKY
+                        Vault --> INKY
+                        Vault --> PINKY
+                        BLINKY & INKY & PINKY --> Nanashi
+                        style Vault fill:#440033,stroke:#bc13fe,stroke-dasharray:5 5
+                        style Nanashi fill:#001122,stroke:#00f2ff,color:#000
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <script>
+        mermaid.initialize({ startOnLoad: true, theme: 'dark', securityLevel: 'loose' });
+    </script>
+</body>
+</html>
