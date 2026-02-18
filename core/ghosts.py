@@ -42,3 +42,24 @@ class Blinky(GhostAgent):
 
 # Instanciation du chef d'orchestre
 blinky = Blinky()
+# --- Agents Fantômes Spécialisés ---
+
+class Inky(GhostAgent):
+    """Agent: INKY (Développeur) - Spécialisé dans le code sécurisé."""
+    def __init__(self):
+        super().__init__("Inky", "Developer", clearance_level=2)
+
+class Pinky(GhostAgent):
+    """Agent: PINKY (Chercheur) - Spécialisé dans l'analyse de données."""
+    def __init__(self):
+        super().__init__("Pinky", "Researcher", clearance_level=2)
+
+# Initialisation du Trio Janus [cite: 2026-01-25]
+inky = Inky()
+pinky = Pinky()
+blinky = Blinky() # Assure-toi que l'initialisation de Blinky est bien là
+
+def get_active_ghosts():
+    """Retourne la liste des agents actifs sous le protocole Nanashi [cite: 2026-02-17]"""
+    return [blinky, inky, pinky]
+
