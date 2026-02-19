@@ -1,4 +1,4 @@
-# NanashiOS
+# NanashiOS 👻🛡️
 
 **Sovereign OS for Autonomous Multimodal AI Agents**  
 Production-ready framework featuring native Semantic Caching, Secure Sandboxed Execution, Split Inference, ε-Noise Obfuscation, GHOST-ALPHA Vault & Proof of Intelligence.
