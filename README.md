@@ -6,7 +6,7 @@ Production-ready framework featuring native Semantic Caching, Secure Sandboxed E
 NANASHI PROJECT — No name, no trace, full control (2026)
 
 [![License: Apache-2.0](https://img.shields.io/badge/License-Apache_2.0-yellow.svg)](https://opensource.org/licenses/Apache-2.0)  
-[![GitHub Pages](https://img.shields.io/badge/GitHub%20Pages-Live-brightgreen)](https://maws-lab.github.io/MAWS/)  
+[![GitHub Pages](https://img.shields.io/badge/GitHub%20Pages-Live-brightgreen)](https://nanashios-lab.github.io/NanashiOS/)  
 [![Diagrams](https://img.shields.io/badge/Diagrams-Mermaid-00f2ff)](https://mermaid.js.org)  
 [![Theme](https://img.shields.io/badge/Theme-Cyberpunk-ff3131)](https://github.com/MAWS-Lab/MAWS)  
 [![Discord](https://img.shields.io/badge/Discord-Join%20Community-7289DA?logo=discord&logoColor=white)](https://discord.gg/ton-serveur-discord)  
@@ -27,7 +27,7 @@ Projet NANASHI — Phase JANUS active depuis 2026.
 ## Schémas du Protocole
 
 Consultez tous les schémas interactifs :  
-→ [NanashiOS Schémas Complets](https://maws-lab.github.io/MAWS/)
+→ [NanashiOS Schémas Complets](https://nanashios-lab.github.io/NanashiOS/)
 
 ## Clarification des Noms du Projet
 
@@ -42,7 +42,7 @@ Consultez tous les schémas interactifs :
 ## Installation
 
 ```bash
-git clone https://github.com/NanashiOS-Lab/MAWS.git
-cd MAWS
+git clone https://github.com/NanashiOS-Lab/NanashiOS.git
+cd NanashiOS
 pip install -r requirements.txt
 python main.py
