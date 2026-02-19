@@ -22,12 +22,22 @@ NanashiOS est l’OS souverain pour agents IA autonomes multimodaux, avec :
 - Consensus utile : Proof of Intelligence
 - Agents fantômes (Blinky, Inky, Pinky) pour synchronisation, obfuscation et purge
 
-Projet NANASHI — Phase active depuis 2026.
+Projet NANASHI — Phase JANUS active depuis 2026.
 
 ## Schémas du Protocole
 
 Consultez tous les schémas interactifs :  
 → [NanashiOS Schémas Complets](https://maws-lab.github.io/MAWS/)
+
+## Clarification des Noms du Projet
+
+| Nom           | C’est quoi ?                              | Rôle dans le projet                                      |
+|---------------|-------------------------------------------|----------------------------------------------------------|
+| **MAWS**      | Le protocole / architecture technique     | Split inference, ε-Noise, Vault, PoI, MUMEI, agents fantômes, etc. |
+| **NanashiOS** | Le nom du produit / OS complet            | L’OS souverain que les gens installent et utilisent au quotidien |
+| **NANASHI**   | Le projet global / identité principale    | L’humain maître, le nœud central                         |
+| **MUMEI**     | La couche publique / décentralisée        | Workers anonymes, split ZK                               |
+| **GHOST-ALPHA** | Le vault / confinement souverain         | Stockage et dé-noising final                             |
 
 ## Installation
 
