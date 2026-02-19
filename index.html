@@ -1,13 +1,13 @@
 <!DOCTYPE html>
 <html lang="fr">
-<head><link rel="manifest" href="/manifest.json">
+<head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     
-    <!-- Titre et description -->
     <title>NanashiOS — Sovereign OS | Schémas du Protocole</title>
-    <meta name="description" content="NanashiOS : l’OS souverain pour agents IA autonomes. Split Inference, ε-Noise, GHOST-ALPHA Vault, Proof of Intelligence. NANASHI PROJECT — No name, no trace, full control.">
-    <!-- FAVICONS (obligatoire) -->
+    <meta name="description" content="NanashiOS : l’OS souverain pour agents IA autonomes. No name, no trace, full control. Split Inference · ε-Noise · GHOST-ALPHA Vault · Proof of Intelligence. NANASHI PROJECT 2026.">
+    
+    <!-- FAVICONS -->
     <link rel="icon" type="image/x-icon" href="/favicon.ico">
     <link rel="apple-touch-icon" href="/apple-touch-icon.png">
     <link rel="manifest" href="/site.webmanifest">
@@ -114,22 +114,29 @@
         .packet2 { animation-delay: 0.45s; }
         .packet3 { animation-delay: 0.9s; }
         @keyframes travel { from { left: -60px; } to { left: 110%; } }
+
         @media (max-width: 768px) {
             .figure { padding: 24px 18px; margin-bottom: 60px; }
             h1 { font-size: 1.8rem; }
         }
     </style>
-<header>
-    <div style="text-align:center; margin-bottom:20px;">
-        <!-- Logo NanashiOS (temporaire – on en fera un beau après) -->
-        <h1 style="color: var(--neon-cyan); font-size: 3.5rem; text-shadow: 0 0 30px var(--neon-cyan); letter-spacing: 8px;">
-            NanashiOS
-        </h1>
-    </div>
-    <div class="subtitle">Schémas du Protocole — Sovereign OS</div>
-</header>
+</head>
+<body>
 
-    
+    <!-- Titre principal stylé avec 👻🛡️ -->
+    <div class="main-title">
+        <h1>NanashiOS <span class="emojis">👻🛡️</span></h1>
+        <p class="subtitle">Schémas du Protocole — Sovereign OS</p>
+        <p class="tagline">No name. No trace. Full control.</p>
+    </div>
+
+    <!-- Header -->
+    <header>
+        <div>
+            <h1>NanashiOS</h1>
+            <div class="subtitle">Schémas du Protocole — Sovereign OS</div>
+        </div>
+    </header>
 
     <div class="container">
 
@@ -168,7 +175,7 @@
 
         <!-- FIGURE 3 -->
         <div class="figure">
-            <h2>FIGURE 3 — ÉCOSYSTÈME CIRCULAIRE MAWS</h2>
+            <h2>FIGURE 3 — ÉCOSYSTÈME CIRCULAIRE NANASHIOS</h2>
             <div class="mermaid-container">
                 <div class="mermaid">
                     graph TD
@@ -202,7 +209,7 @@
             <div class="mermaid-container">
                 <div class="mermaid">
                     timeline
-                        title ROADMAP MAWS 2026
+                        title ROADMAP NANASHIOS 2026
                         section Q1
                             MVP local + UI
                         section Q2
@@ -234,7 +241,7 @@
 
         <!-- FIGURE 7 -->
         <div class="figure">
-            <h2>FIGURE 7 — OVERVIEW SYNTHÉTIQUE MAWS (NANASHI PROJECT)</h2>
+            <h2>FIGURE 7 — OVERVIEW SYNTHÉTIQUE NANASHIOS (NANASHI PROJECT)</h2>
             <div class="mermaid-container">
                 <div class="mermaid">
                     graph LR
@@ -293,8 +300,7 @@
             </div>
         </div>
 
-    </div>
-        <!-- FIGURE 10 — SÉCURITÉ ZERO TRUST -->
+        <!-- FIGURE 10 -->
         <div class="figure">
             <h2>FIGURE 10 — SÉCURITÉ ZERO TRUST & GHOST-ALPHA</h2>
             <div class="mermaid-container">
@@ -311,7 +317,9 @@
                         style F fill:#002211,stroke:#00ff9d,stroke-width:4px,color:#fff
                 </div>
             </div>
-        </div>        <!-- FIGURE 11 — ARCHITECTURE CLOUD HYBRIDE SOUVERAINE -->
+        </div>
+
+        <!-- FIGURE 11 -->
         <div class="figure">
             <h2>FIGURE 11 — ARCHITECTURE CLOUD HYBRIDE SOUVERAINE</h2>
             <div class="mermaid-container">
@@ -334,7 +342,9 @@
                         style LOCAL fill:#440033,stroke:#bc13fe,stroke-width:3px
                 </div>
             </div>
-        </div>        <!-- FIGURE 12 — MARKETPLACE D’AGENTS -->
+        </div>
+
+        <!-- FIGURE 12 -->
         <div class="figure">
             <h2>FIGURE 12 — MARKETPLACE D’AGENTS (Écosystème NanashiOS)</h2>
             <div class="mermaid-container">
@@ -354,7 +364,9 @@
                 </div>
             </div>
         </div>
-    
+
+    </div>
+
     <script>
         mermaid.initialize({ startOnLoad: true, theme: 'dark', securityLevel: 'loose' });
     </script>
