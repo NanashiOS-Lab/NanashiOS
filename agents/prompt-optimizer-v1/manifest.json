@@ -10,12 +10,6 @@
       "name": "prompt",
       "type": "string",
       "description": "Prompt brut à optimiser"
-    },
-    {
-      "name": "style",
-      "type": "string",
-      "description": "Style optionnel (ex. cyberpunk, realistic, anime)",
-      "required": false
     }
   ],
   "outputs": [
@@ -23,14 +17,9 @@
       "name": "optimized_prompt",
       "type": "string",
       "description": "Prompt amélioré et détaillé"
-    },
-    {
-      "name": "improvement_score",
-      "type": "float",
-      "description": "Score d’amélioration estimé (0-1)"
     }
   ],
   "dependencies": ["nltk>=3.7", "textblob>=0.17.1"],
   "price": "free",
-  "tags": ["prompt-engineering", "image-generation", "ai-art", "creative"]
+  "tags": ["prompt-engineering", "image-generation", "ai-art"]
 }
