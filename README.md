@@ -25,7 +25,7 @@ NanashiOS est l’OS souverain pour agents IA autonomes multimodaux, avec :
 - Consensus utile : Proof of Intelligence
 - Agents fantômes (Blinky, Inky, Pinky) pour synchronisation, obfuscation et purge
 
-Projet NANASHI — Phase JANUS active depuis 2026.
+Projet NANASHI — Phase active depuis 2026.
 
 ## Schémas du Protocole
 
