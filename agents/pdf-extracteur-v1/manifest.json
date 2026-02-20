@@ -1,0 +1,36 @@
+{
+  "id": "pdf-extracteur-v1",
+  "name": "PDF Extractor Agent",
+  "description": "Extrait texte, tables et images d’un PDF. Utile pour agents qui traitent documents administratifs, contrats, factures.",
+  "author": "NanashiOS-Lab",
+  "version": "1.0.0",
+  "license": "Apache-2.0",
+  "inputs": [
+    {
+      "name": "pdf_file",
+      "type": "file",
+      "formats": ["pdf"],
+      "description": "Fichier PDF à extraire"
+    }
+  ],
+  "outputs": [
+    {
+      "name": "text",
+      "type": "string",
+      "description": "Texte extrait"
+    },
+    {
+      "name": "tables",
+      "type": "array[object]",
+      "description": "Tables extraites"
+    },
+    {
+      "name": "images",
+      "type": "array[image]",
+      "description": "Images extraites"
+    }
+  ],
+  "dependencies": ["pypdf2>=2.0.0", "tabula-py>=2.0.0", "pillow>=9.0.0"],
+  "price": "free",
+  "tags": ["pdf", "extraction", "document-processing"]
+}
