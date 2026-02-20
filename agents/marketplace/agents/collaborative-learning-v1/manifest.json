@@ -1,0 +1,36 @@
+{
+  "id": "collaborative-learning-v1",
+  "name": "Collaborative Learning Agent",
+  "description": "Permet à plusieurs agents ou utilisateurs d’apprendre ensemble, partager des connaissances et améliorer leurs modèles localement de manière souveraine (sans cloud central). Style apprentissage fédéré local.",
+  "author": "NanashiOS-Lab",
+  "version": "1.0.0",
+  "license": "Apache-2.0",
+  "inputs": [
+    {
+      "name": "local_knowledge",
+      "type": "object",
+      "description": "Connaissances locales de l’agent actuel"
+    },
+    {
+      "name": "shared_insights",
+      "type": "array[object]",
+      "description": "Connaissances partagées par d’autres agents (anonymisées)",
+      "required": false
+    }
+  ],
+  "outputs": [
+    {
+      "name": "improved_knowledge",
+      "type": "object",
+      "description": "Modèle de connaissances amélioré"
+    },
+    {
+      "name": "new_insights",
+      "type": "array[object]",
+      "description": "Nouvelles connaissances à partager avec les autres agents"
+    }
+  ],
+  "dependencies": ["networkx>=3.0.0", "numpy>=1.24.0"],
+  "price": "free",
+  "tags": ["collaborative-learning", "federated-learning", "knowledge-sharing", "multi-agent", "sovereign", "privacy"]
+}
