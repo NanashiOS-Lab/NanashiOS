@@ -20,6 +20,12 @@
     {"id": "keyword-extractor-v1", "name": "Keyword Extractor Agent", "path": "agents/keyword-extractor-v1/manifest.json"},
     {"id": "image-caption-v1", "name": "Image Caption Agent", "path": "agents/image-caption-v1/manifest.json"},
     {"id": "topologique-v1", "name": "Topology Analyzer Agent", "path": "agents/topologique-v1/manifest.json"},
-    {"id": "coordinateur-multi-agents-v1", "name": "Coordinateur Multi-Agents", "path": "agents/coordinateur-multi-agents-v1/manifest.json"}
+    {"id": "coordinateur-multi-agents-v1", "name": "Coordinateur Multi-Agents", "path": "agents/coordinateur-multi-agents-v1/manifest.json"},
+    {"id": "self-learning-v1", "name": "Self Learning Agent", "path": "agents/self-learning-v1/manifest.json"},
+    {"id": "collaborative-learning-v1", "name": "Collaborative Learning Agent", "path": "agents/collaborative-learning-v1/manifest.json"},
+    {"id": "local-malware-detector-v1", "name": "Local Malware Detector", "path": "agents/local-malware-detector-v1/manifest.json"},
+    {"id": "fake-news-detector-v1", "name": "Fake News Detector", "path": "agents/fake-news-detector-v1/manifest.json"},
+    {"id": "biometric-local-auth-v1", "name": "Biometric Local Auth", "path": "agents/biometric-local-auth-v1/manifest.json"},
+    {"id": "energy-optimizer-v1", "name": "Energy Optimizer Agent", "path": "agents/energy-optimizer-v1/manifest.json"}
   ]
 }
