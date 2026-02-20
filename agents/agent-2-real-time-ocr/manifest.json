@@ -1,0 +1,26 @@
+{
+  "id": "agent-2-real-time-ocr",
+  "name": "Real-time OCR Agent",
+  "description": "Extrait le texte d’une image en temps réel (OCR avec Tesseract). Utile pour numérisation rapide.",
+  "author": "NanashiOS-Lab",
+  "version": "1.0.0",
+  "license": "Apache-2.0",
+  "inputs": [
+    {
+      "name": "image",
+      "type": "image",
+      "formats": ["png", "jpg", "jpeg"],
+      "description": "Image contenant du texte"
+    }
+  ],
+  "outputs": [
+    {
+      "name": "text",
+      "type": "string",
+      "description": "Texte extrait"
+    }
+  ],
+  "dependencies": ["pytesseract", "pillow"],
+  "price": "free",
+  "tags": ["ocr", "text-extraction", "real-time"]
+}
