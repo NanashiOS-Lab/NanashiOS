@@ -1,0 +1,46 @@
+{
+  "id": "coordinateur-multi-agents-v1",
+  "name": "Coordinateur Multi-Agents",
+  "description": "Orchestre et coordonne plusieurs agents NanashiOS pour accomplir des tâches complexes de manière autonome, synchronisée et souveraine. Gère la répartition des tâches, la communication et le suivi.",
+  "author": "NanashiOS-Lab",
+  "version": "1.0.0",
+  "license": "Apache-2.0",
+  "inputs": [
+    {
+      "name": "task",
+      "type": "string",
+      "description": "Tâche globale à accomplir"
+    },
+    {
+      "name": "available_agents",
+      "type": "array[string]",
+      "description": "Liste des agents disponibles"
+    },
+    {
+      "name": "constraints",
+      "type": "string",
+      "description": "Contraintes (temps, priorité, confidentialité)",
+      "required": false
+    }
+  ],
+  "outputs": [
+    {
+      "name": "coordination_plan",
+      "type": "string",
+      "description": "Plan complet de coordination"
+    },
+    {
+      "name": "task_assignment",
+      "type": "object",
+      "description": "Répartition des tâches par agent"
+    },
+    {
+      "name": "status",
+      "type": "string",
+      "description": "Statut global (en cours / terminé / bloqué)"
+    }
+  ],
+  "dependencies": ["networkx>=3.0.0"],
+  "price": "free",
+  "tags": ["coordination", "multi-agent", "orchestration", "autonomy", "sovereign"]
+}
