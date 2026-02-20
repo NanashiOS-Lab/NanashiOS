@@ -1,0 +1,31 @@
+{
+  "id": "agent-1-blur-detection-v1",
+  "name": "Blur Detection Agent",
+  "description": "Détecte le flou sur une image et renvoie un score de netteté (0 à 1). Utile pour filtrer les photos avant traitement.",
+  "author": "NanashiOS-Lab",
+  "version": "1.0.0",
+  "license": "Apache-2.0",
+  "inputs": [
+    {
+      "name": "image",
+      "type": "image",
+      "formats": ["png", "jpg", "jpeg"],
+      "description": "Image à analyser"
+    }
+  ],
+  "outputs": [
+    {
+      "name": "blur_score",
+      "type": "float",
+      "description": "Score de flou (0 = net, 1 = très flou)"
+    },
+    {
+      "name": "is_blurry",
+      "type": "bool",
+      "description": "True si l’image est considérée floue (seuil > 0.4)"
+    }
+  ],
+  "dependencies": ["opencv-python-headless>=4.5.0"],
+  "price": "free",
+  "tags": ["image", "preprocessing", "quality-check"]
+}
