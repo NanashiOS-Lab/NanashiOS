@@ -1,4 +1,6 @@
 {
+  "copyright": "© 2026 NanashiOS-Lab. Tous droits réservés – Nom, logo, slogan protégés",
+"license": "BSL-1.1 - Commercial use restricted until 20 February 2030",
   "id": "self-healing-agent-v1",
   "name": "Self Healing Agent",
   "description": "Détecte ses propres erreurs, bugs ou dysfonctionnements et tente de les corriger automatiquement. Vrai agent autonome et résilient.",
