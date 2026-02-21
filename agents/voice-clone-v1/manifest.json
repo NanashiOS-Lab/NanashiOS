@@ -1,4 +1,6 @@
 {
+  "copyright": "© 2026 NanashiOS-Lab. Tous droits réservés – Nom, logo, slogan protégés",
+"license": "BSL-1.1 - Commercial use restricted until 20 February 2030",
   "id": "voice-clone-v1",
   "name": "Voice Clone Agent",
   "description": "Clone une voix à partir d’un échantillon audio court. Utile pour agents vocaux personnalisés, doublage et accessibilité. Fonctionne localement.",
