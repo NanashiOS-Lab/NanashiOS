@@ -1,49 +1,68 @@
 # NanashiOS 👻🛡️
 
-**Sovereign OS for Autonomous Multimodal AI Agents**  
-Production-ready framework featuring native Semantic Caching, Secure Sandboxed Execution, Split Inference, ε-Noise Obfuscation, GHOST-ALPHA Vault & Proof of Intelligence.
+**Système d’exploitation souverain pour agents IA multimodaux autonomes**
 
-NANASHI PROJECT — No name, no trace, full control (2026)
+Framework prêt pour la production avec cache sémantique natif, exécution sécurisée en sandbox et marketplace de 30 agents.
 
-NanashiOS est sous BSL 1.1 depuis le 21 février 2026.
-Commercial use interdit jusqu’au 20 février 2030 sans licence payante.
-Le nom "NanashiOS", logo et slogan sont protégés (marque en cours de dépôt).
-Toute copie ou exploitation sans accord sera poursuivie.
-[![GitHub Pages](https://img.shields.io/badge/GitHub%20Pages-Live-brightgreen)](https://nanashios-lab.github.io/NanashiOS/)  
-[![Diagrams](https://img.shields.io/badge/Diagrams-Mermaid-00f2ff)](https://mermaid.js.org)  
-[![Theme](https://img.shields.io/badge/Theme-Cyberpunk-ff3131)](https://github.com/MAWS-Lab/MAWS)  
-[![Discord](https://img.shields.io/badge/Discord-Join%20Community-7289DA?logo=discord&logoColor=white)](https://discord.gg/ton-serveur-discord)  
-[![X](https://img.shields.io/badge/X-@NanashiOS-black?logo=x&logoColor=white)](https://x.com/NanashiOS)
+**Pas de nom. Pas de trace. Contrôle total.**
 
-## Overview
+**Projet NANASHI — 2026**
 
-NanashiOS est l’OS souverain pour agents IA autonomes multimodaux, avec :
-- Cache sémantique natif
-- Exécution sandboxée sécurisée
-- Split Inference avec obfuscation ε
-- Confinement total via GHOST-ALPHA Vault
-- Consensus utile : Proof of Intelligence
-- Agents fantômes (Blinky, Inky, Pinky) pour synchronisation, obfuscation et purge
+---
 
-Projet NANASHI — Phase active depuis 2026.
+### Fonctionnalités principales
+- Split Inference
+- Obfuscation ε-Noise
+- Coffre-fort GHOST-ALPHA
+- Proof of Intelligence
+- Marketplace avec 30 agents souverains
 
-## Schémas du Protocole
+### Marketplace (30 agents disponibles)
 
-Consultez tous les schémas interactifs :  
-→ [NanashiOS Schémas Complets](https://nanashios-lab.github.io/NanashiOS/)
+**Texte & Langage**  
+- résumé-texte-v1  
+- sentiment-v1  
+- détection-émotion-v1  
+- traduction-v1  
+- keyword-extractor-v1  
+- human-auth-v1  
+- fake-news-detector-v1  
+- ethical-reasoner-v1  
 
-## Clarification des Noms du Projet
+**Image & Vision**  
+- blur-detection-v1  
+- image-caption-v1  
+- face-blur-v1  
+- image-deepfake-detector-v1  
 
-| Nom           | C’est quoi ?                              | Rôle dans le projet                                      |
-|---------------|-------------------------------------------|----------------------------------------------------------|
-| **MAWS**      | Le protocole / architecture technique     | Split inference, ε-Noise, Vault, PoI, MUMEI, agents fantômes, etc. |
-| **NanashiOS** | Le nom du produit / OS complet            | L’OS souverain que les gens installent et utilisent au quotidien |
-| **NANASHI**   | Le projet global / identité principale    | L’humain maître, le nœud central                         |
-| **MUMEI**     | La couche publique / décentralisée        | Workers anonymes, split ZK                               |
-| **GHOST-ALPHA** | Le vault / confinement souverain         | Stockage et dé-noising final                             |
+**Audio & Voix**  
+- real-time-ocr-v1  
+- voice-clone-v1  
+- audio-deepfake-detector-v1  
 
-## Installation
+**Sécurité & Privacy**  
+- local-malware-detector-v1  
+- biometric-local-auth-v1  
+- contract-auditor-v1  
+- patent-drafter-v1  
+- self-healing-v1  
 
+**Coordination & Avancé**  
+- coordinateur-multi-agents-v1  
+- pulse-logic-v1  
+- personal-knowledge-graph-v1  
+- collaborative-learning-v1  
+
+**Outils Techniques**  
+- code-writer-v1  
+- pdf-extracteur-v1  
+- topology-analyzer-v1  
+
+Voir la liste complète et détaillée dans [marketplace/README.md](marketplace/README.md)
+
+---
+
+### Installation rapide
 ```bash
 git clone https://github.com/NanashiOS-Lab/NanashiOS.git
 cd NanashiOS
