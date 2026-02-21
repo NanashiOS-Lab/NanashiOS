@@ -1,4 +1,6 @@
 {
+  "copyright": "© 2026 NanashiOS-Lab. Tous droits réservés – Nom, logo, slogan protégés",
+"license": "BSL-1.1 - Commercial use restricted until 20 February 2030",
   "id": "code-writer-v1",
   "name": "Code Writer Agent",
   "description": "Écrit, refactorise, debugge et documente du code dans plusieurs langages (Python, JS, Rust, etc.). Utile pour agents autonomes qui génèrent du code souverain.",
