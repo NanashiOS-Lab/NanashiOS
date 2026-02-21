@@ -1,0 +1,31 @@
+{
+  "id": "behavioral-auth-v1",
+  "name": "Behavioral Auth Agent",
+  "description": "Authentification basée sur le comportement de l’utilisateur (vitesse de frappe, habitudes d’utilisation, patterns de navigation). Très haute souveraineté et privacy.",
+  "author": "NanashiOS-Lab",
+  "version": "1.0.0",
+  "license": "BSL-1.1",
+  "license_note": "Business Source License 1.1 - Commercial use restricted until 20 February 2030",
+  "inputs": [
+    {
+      "name": "behavior_data",
+      "type": "object",
+      "description": "Données comportementales (vitesse frappe, patterns, etc.)"
+    }
+  ],
+  "outputs": [
+    {
+      "name": "authenticated",
+      "type": "bool",
+      "description": "True si authentification réussie"
+    },
+    {
+      "name": "confidence",
+      "type": "float",
+      "description": "Score de confiance comportementale (0-1)"
+    }
+  ],
+  "dependencies": ["numpy>=1.24.0"],
+  "price": "free",
+  "tags": ["authentication", "behavioral-auth", "privacy", "security", "local"]
+}
