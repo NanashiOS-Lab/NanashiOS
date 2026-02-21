@@ -1,4 +1,6 @@
 {
+  "copyright": "© 2026 NanashiOS-Lab. Tous droits réservés – Nom, logo, slogan protégés",
+"license": "BSL-1.1 - Commercial use restricted until 20 February 2030",
   "id": "biometric-local-auth-v1",
   "name": "Biometric Local Auth Agent",
   "description": "Gère l’authentification biométrique locale (visage, voix, empreinte) sans envoyer aucune donnée à l’extérieur. Très haut niveau de souveraineté et privacy.",
