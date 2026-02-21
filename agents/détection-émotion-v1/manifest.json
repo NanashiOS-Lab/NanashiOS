@@ -1,4 +1,6 @@
 {
+  "copyright": "© 2026 NanashiOS-Lab. Tous droits réservés – Nom, logo, slogan protégés",
+"license": "BSL-1.1 - Commercial use restricted until 20 February 2030",
   "id": "détection-émotion-v1",
   "name": "Emotion Detection Agent",
   "description": "Détecte les émotions dans un texte ou un audio (joie, colère, tristesse, peur, surprise). Utile pour agents empathiques ou analyse de feedback.",
