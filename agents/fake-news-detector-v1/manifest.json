@@ -1,4 +1,6 @@
 {
+  "copyright": "© 2026 NanashiOS-Lab. Tous droits réservés – Nom, logo, slogan protégés",
+"license": "BSL-1.1 - Commercial use restricted until 20 February 2030",
   "id": "fake-news-detector-v1",
   "name": "Fake News Detector Agent",
   "description": "Analyse un texte ou article pour détecter fake news, désinformation et manipulation. Score de fiabilité + sources suspectes. Fonctionne localement.",
