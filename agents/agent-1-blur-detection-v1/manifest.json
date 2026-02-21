@@ -4,7 +4,7 @@
   "description": "Détecte le flou sur une image et renvoie un score de netteté (0 à 1). Utile pour filtrer les photos avant traitement.",
   "author": "NanashiOS-Lab",
   "version": "1.0.0",
-  "license": "Apache-2.0",
+  "license": "license": "BSL-1.1","license_note": "Business Source License 1.1 - Commercial use restricted until 20 February 2030",
   "inputs": [
     {
       "name": "image",
