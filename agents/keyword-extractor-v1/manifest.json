@@ -1,4 +1,6 @@
 {
+  "copyright": "© 2026 NanashiOS-Lab. Tous droits réservés – Nom, logo, slogan protégés",
+"license": "BSL-1.1 - Commercial use restricted until 20 February 2030",
   "id": "keyword-extractor-v1",
   "name": "Keyword Extractor Agent",
   "description": "Extrait les mots-clés et entités nommées d’un texte (avec spaCy ou KeyBERT). Utile pour recherche, tagging, résumé intelligent et analyse de contenu.",
