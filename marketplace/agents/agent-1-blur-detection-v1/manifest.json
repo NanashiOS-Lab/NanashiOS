@@ -1,0 +1,32 @@
+{
+  "id": "agent-1-blur-detection-v1",
+  "name": "Blur Detection Agent",
+  "description": "Détecte le flou sur une image et retourne un score de qualité. Utile pour la vérification de qualité d’image avant traitement.",
+  "author": "NanashiOS-Lab",
+  "version": "1.0.0",
+  "license": "BSL-1.1",
+  "license_note": "Business Source License 1.1 - Commercial use restricted until 20 February 2030",
+  "inputs": [
+    {
+      "name": "image",
+      "type": "image",
+      "formats": ["png", "jpg", "jpeg"],
+      "description": "Image à analyser"
+    }
+  ],
+  "outputs": [
+    {
+      "name": "blur_score",
+      "type": "float",
+      "description": "Score de flou (0 = très net, 1 = très flou)"
+    },
+    {
+      "name": "is_blurry",
+      "type": "bool",
+      "description": "True si l’image est considérée comme floue"
+    }
+  ],
+  "dependencies": ["opencv-python-headless>=4.5.0"],
+  "price": "free",
+  "tags": ["image", "quality-check", "preprocessing"]
+}
