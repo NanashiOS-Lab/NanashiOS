@@ -1,4 +1,6 @@
 {
+  "copyright": "© 2026 NanashiOS-Lab. Tous droits réservés – Nom, logo, slogan protégés",
+"license": "BSL-1.1 - Commercial use restricted until 20 February 2030",
   "id": "pdf-extracteur-v1",
   "name": "PDF Extractor Agent",
   "description": "Extrait texte, tables et images d’un PDF. Utile pour agents qui traitent documents administratifs, contrats, factures.",
