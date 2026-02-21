@@ -1,4 +1,6 @@
 {
+  "copyright": "© 2026 NanashiOS-Lab. Tous droits réservés – Nom, logo, slogan protégés",
+"license": "BSL-1.1 - Commercial use restricted until 20 February 2030",
   "id": "traduction-v1",
   "name": "Translation Agent",
   "description": "Traduit un texte dans plusieurs langues (offline avec modèles légers). Souveraineté : pas d’envoi à un cloud.",
