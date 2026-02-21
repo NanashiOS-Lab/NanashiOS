@@ -4,7 +4,8 @@
   "description": "Orchestre et coordonne plusieurs agents NanashiOS pour accomplir des tâches complexes de manière autonome, synchronisée et souveraine. Gère la répartition des tâches, la communication et le suivi.",
   "author": "NanashiOS-Lab",
   "version": "1.0.0",
-  "license": "Apache-2.0",
+  "license": "license": "BSL-1.1",
+  "license_note": "Business Source License 1.1 - Commercial use restricted until 20 February 2030",
   "inputs": [
     {
       "name": "task",
