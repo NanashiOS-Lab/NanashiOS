@@ -1,4 +1,6 @@
 {
+  "copyright": "© 2026 NanashiOS-Lab. Tous droits réservés – Nom, logo, slogan protégés",
+"license": "BSL-1.1 - Commercial use restricted until 20 February 2030",
   "id": "image-caption-v1",
   "name": "Image Caption Agent",
   "description": "Génère une description textuelle détaillée d’une image (local avec BLIP ou équivalent). Utile pour agents qui décrivent visuels sans cloud.",
