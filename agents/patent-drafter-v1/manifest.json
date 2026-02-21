@@ -1,4 +1,6 @@
 {
+  "copyright": "© 2026 NanashiOS-Lab. Tous droits réservés – Nom, logo, slogan protégés",
+"license": "BSL-1.1 - Commercial use restricted until 20 February 2030",
   "id": "patent-drafter-v1",
   "name": "Patent Drafter Agent",
   "description": "Rédige ou vérifie des descriptions de brevets conformes aux exigences OEB (EPO) et INPI (France). Vérifie brevetabilité, nouveauté, activité inventive.",
