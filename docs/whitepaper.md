@@ -120,7 +120,43 @@ Tout fonctionne **sans cloud**, avec une souveraineté maximale.
 
 ## 8. Tokenomics du $NANA
 
-*(Section en cours de finalisation – détails complets avant le lancement du testnet Q3 2026)*
+**$NANA** est le token de gouvernance et d’utilité de l’écosystème Nanashi IA.  
+Il est conçu pour aligner les incitations à long terme entre utilisateurs, développeurs d’agents, validateurs Mumei et la communauté.
+
+### Supply total
+**1 000 000 000 $NANA** (1 milliard) – Supply fixe et non inflationniste.
+
+### Distribution initiale (Fair Launch – pas de presale, pas de VC, pas d’allocation team cachée)
+
+| Allocation                  | Pourcentage | Montant          | Vesting / Utilisation |
+|-----------------------------|-------------|------------------|-----------------------|
+| **Community & Airdrop**     | 40 %        | 400 000 000      | 50 % immédiat (testnet + early users) – 50 % sur 24 mois via rewards |
+| **DAO Treasury**            | 25 %        | 250 000 000      | Contrôlé par la DAO (timelock 48h) – utilisé pour développement, marketing discret, bug bounties |
+| **Rewards Mumei & Staking** | 20 %        | 200 000 000      | Émis progressivement via Proof of Intelligence (subnet Bittensor) |
+| **Liquidity & DEX**         | 10 %        | 100 000 000      | Ajouté au lancement sur un DEX décentralisé (fair launch) |
+| **Équipe & Lab**            | 5 %         | 50 000 000       | Vesting 36 mois (cliff 12 mois) – alignement total avec la communauté |
+| **Partenariats & Advisors** | 0 %         | 0                | Aucun allocation pré-minée (philosophie « Pas de trace ») |
+
+### Utilité du $NANA
+- **Gouvernance** : Vote dans la Nanashi DAO (one token = one vote + option quadratic voting)
+- **Staking** : Stake pour obtenir des rewards sur le subnet Mumei et prioriser l’exécution de vos agents
+- **Marketplace** : Paiement des frais premium pour agents avancés ou collaborations multi-agents
+- **Proof of Intelligence** : Rewards pour les validateurs/miners qui vérifient l’authenticité des agents
+- **Brûlage (deflationary)** : 10 % des frais marketplace et des transactions sur le subnet Mumei sont brûlés
+- **Accès early** : Accès prioritaire aux nouvelles versions d’agents et aux mises à jour hardware
+
+### Mécanismes économiques
+- **Halving annuel** sur les rewards Mumei (inspiré Bittensor) pour créer de la rareté
+- **Staking APY** dynamique : entre 8 % et 25 % selon la participation au subnet
+- **Anti-whale** : Maximum 2 % du supply par wallet pour les 6 premiers mois
+- **Anti-bot** : Activation DAO pour protéger le fair launch
+
+**Lancement** : Testnet Q3 2026 (fair launch sur une chaîne compatible Bittensor ou Layer-2 souveraine).  
+Aucun token n’est alloué avant le lancement public.
+
+**Objectif** : Un token qui récompense réellement l’usage et la contribution à l’IA souveraine, pas la spéculation.
+
+*(Cette section sera mise à jour avec les contrats audités et les adresses exactes avant le testnet)*
 
 ---
 
