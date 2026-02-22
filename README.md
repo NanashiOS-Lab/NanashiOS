@@ -30,7 +30,7 @@
 
 ### Marketplace – 30 agents souverains (v1.0)
 
-#### 📝 Texte & Langage (8 agents)
+#### 📝 **Texte & Langage** (8 agents)
 - `résumé-texte-v1`
 - `sentiment-v1`
 - `détection-émotion-v1`
@@ -40,31 +40,31 @@
 - `fake-news-detector-v1`
 - `ethical-reasoner-v1`
 
-#### 🖼️ Image & Vision (4 agents)
+#### 🖼️ **Image & Vision** (4 agents)
 - `blur-detection-v1`
 - `image-caption-v1`
 - `face-blur-v1`
 - `image-deepfake-detector-v1`
 
-#### 🎙️ Audio & Voix (3 agents)
+#### 🎙️ **Audio & Voix** (3 agents)
 - `real-time-ocr-v1`
 - `voice-clone-v1`
 - `audio-deepfake-detector-v1`
 
-#### 🔒 Sécurité & Privacy (5 agents)
+#### 🔒 **Sécurité & Privacy** (5 agents)
 - `local-malware-detector-v1`
 - `biometric-local-auth-v1`
 - `contract-auditor-v1`
 - `patent-drafter-v1`
 - `self-healing-v1`
 
-#### 🤝 Coordination & Avancé (4 agents)
+#### 🤝 **Coordination & Avancé** (4 agents)
 - `coordinateur-multi-agents-v1`
 - `pulse-logic-v1`
 - `personal-knowledge-graph-v1`
 - `collaborative-learning-v1`
 
-#### 🛠️ Outils Techniques (6 agents)
+#### 🛠️ **Outils Techniques** (6 agents)
 - `code-writer-v1`
 - `pdf-extracteur-v1`
 - `topology-analyzer-v1`
@@ -81,19 +81,3 @@ git clone https://github.com/NanashiOS-Lab/NanashiOS.git
 cd NanashiOS
 pip install -r requirements.txt
 python main.py --setup
-
-Documentation complète
-• White Paper v1.6 ← à créer dans le dossier docs/
-• Liste détaillée des agents
-• Architecture technique
-
-Licence
-Business Source License 1.1
-Utilisation non commerciale autorisée.
-Utilisation commerciale interdite jusqu’au 20 février 2030 sans accord écrit.
-Contact : nanashia256@gmail.com
-
-NanashiOS-Lab – Février 2026
-Rejoins le mouvement en silence.
-Star → Clone → Teste → Contribue.
-Pas de nom. Pas de trace. Contrôle total.
