@@ -83,3 +83,5 @@ git clone https://github.com/NanashiOS-Lab/NanashiOS.git
 cd NanashiOS
 pip install -r requirements.txt
 python main.py --setup
+
+Pas de nom. Pas de trace. Contrôle total. 👻🛡️
