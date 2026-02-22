@@ -83,7 +83,7 @@ pip install -r requirements.txt
 python main.py --setup
 
 Documentation complète
-• White Paper v1.6 ← dans le dossier docs/
+• White Paper v1.6 ← à créer dans le dossier docs/
 • Liste détaillée des agents
 • Architecture technique
 
