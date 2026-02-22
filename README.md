@@ -1,84 +1,76 @@
-# NanashiOS 👻🛡️
+# Nanashi IA & NanashiOS 👻🛡️
 
-**Système d’exploitation souverain pour agents IA multimodaux autonomes**
+**L’écosystème souverain d’intelligence artificielle multimodale 100 % local**
 
-Framework prêt pour la production avec cache sémantique natif, exécution sécurisée en sandbox et marketplace de 30 agents.
+**Nanashi IA** est l’écosystème complet.  
+**NanashiOS** en est le cœur : le système d’exploitation dédié aux agents IA autonomes.
 
 **Pas de nom. Pas de trace. Contrôle total.**
 
-**Projet NANASHI — 2026**
+---
+
+### Pourquoi Nanashi ?
+- **100 % local** : rien ne quitte votre machine (PC, Mac, serveur personnel).
+- **30 agents souverains** prêts à l’emploi (texte, image, audio, sécurité, coordination, outils).
+- Architecture avancée : sandbox par agent, split inference, ε-Noise Obfuscation, GHOST-ALPHA Vault.
+- Registre d’authenticité on-chain **Mumei Protocol** (Bittensor subnet – Q1 2027).
+- Gouvernance DAO via le token **$NANA** (testnet Q3 2026).
 
 ---
 
 ### Fonctionnalités principales
 - Split Inference
-- Obfuscation ε-Noise
-- Coffre-fort GHOST-ALPHA
+- ε-Noise Obfuscation (privacy différentielle)
+- GHOST-ALPHA Vault (chiffrement post-quantique)
 - Proof of Intelligence
-- Marketplace avec 30 agents souverains
+- Marketplace modulaire de 30 agents
+- Coordinateur multi-agents + cache sémantique natif
 
-### Marketplace (30 agents disponibles)
-
-**Texte & Langage**  
-- résumé-texte-v1  
-- sentiment-v1  
-- détection-émotion-v1  
-- traduction-v1  
-- keyword-extractor-v1  
-- human-auth-v1  
-- fake-news-detector-v1  
-- ethical-reasoner-v1  
-
-**Image & Vision**  
-- blur-detection-v1  
-- image-caption-v1  
-- face-blur-v1  
-- image-deepfake-detector-v1  
-
-**Audio & Voix**  
-- real-time-ocr-v1  
-- voice-clone-v1  
-- audio-deepfake-detector-v1  
-
-**Sécurité & Privacy**  
-- local-malware-detector-v1  
-- biometric-local-auth-v1  
-- contract-auditor-v1  
-- patent-drafter-v1  
-- self-healing-v1  
-
-**Coordination & Avancé**  
-- coordinateur-multi-agents-v1  
-- pulse-logic-v1  
-- personal-knowledge-graph-v1  
-- collaborative-learning-v1  
-
-**Outils Techniques**  
-- code-writer-v1  
-- pdf-extracteur-v1  
-- topology-analyzer-v1  
-
-Voir la liste complète et détaillée dans [marketplace/README.md](marketplace/README.md)
-
-Copyright © 2026 NanashiOS-Lab. Tous droits réservés.
-
-Le nom « NanashiOS », le logo (représentant un fantôme 👻 avec bouclier 🛡️), le slogan « Pas de nom. Pas de trace. Contrôle total. » ainsi que l’ensemble du design original, de l’identité visuelle et conceptuelle du projet sont protégés par le droit d’auteur et le droit des marques (marque en cours de dépôt à l’INPI).
-
-Le code source et les agents publiés dans ce dépôt sont soumis à la licence **Business Source License 1.1** (BSL 1.1) depuis le 21 février 2026.
-
-**Utilisation commerciale** (y compris mais sans s’y limiter : SaaS, revente, intégration dans un service payant, cloud, application commerciale, fork à but lucratif, rebranding pour exploitation marchande) est strictement interdite jusqu’au 20 février 2030 sans licence commerciale préalable et écrite de NanashiOS-Lab.
-
-Contact pour toute demande de licence commerciale ou autorisation :  
-nanashia256@gmail.com
-
-Toute reproduction, distribution, modification ou exploitation non autorisée du nom, logo, slogan, design ou contenu protégé sera poursuivie conformément au Code de la propriété intellectuelle français et européen.
-
-Les versions antérieures au 21 février 2026 restaient sous licence Apache 2.0. À partir de cette date, BSL 1.1 s’applique à toutes les contributions et évolutions.
 ---
 
-### Installation rapide
+### Marketplace – 30 agents (v1.0)
+
+**Texte & Langage** (8)  
+résumé-texte-v1 • sentiment-v1 • détection-émotion-v1 • traduction-v1 • keyword-extractor-v1 • human-auth-v1 • fake-news-detector-v1 • ethical-reasoner-v1
+
+**Image & Vision** (4)  
+blur-detection-v1 • image-caption-v1 • face-blur-v1 • image-deepfake-detector-v1
+
+**Audio & Voix** (3)  
+real-time-ocr-v1 • voice-clone-v1 • audio-deepfake-detector-v1
+
+**Sécurité & Privacy** (5)  
+local-malware-detector-v1 • biometric-local-auth-v1 • contract-auditor-v1 • patent-drafter-v1 • self-healing-v1
+
+**Coordination & Avancé** (4)  
+coordinateur-multi-agents-v1 • pulse-logic-v1 • personal-knowledge-graph-v1 • collaborative-learning-v1
+
+**Outils Techniques** (6)  
+code-writer-v1 • pdf-extracteur-v1 • topology-analyzer-v1 • semantic-search-v1 • data-visualizer-v1 • auto-debugger-v1
+
+---
+
+### Installation ultra-rapide (2 minutes)
+
 ```bash
 git clone https://github.com/NanashiOS-Lab/NanashiOS.git
 cd NanashiOS
 pip install -r requirements.txt
-python main.py
+python main.py --setup
+
+Documentation complète
+•  White Paper v1.6 ← à créer dans le dossier docs/
+•  Liste détaillée des agents
+•  Architecture technique
+
+Licence
+Business Source License 1.1
+Utilisation non commerciale autorisée.
+Utilisation commerciale interdite jusqu’au 20 février 2030 sans accord écrit.
+Contact : nanashia256@gmail.com
+
+NanashiOS-Lab – Février 2026
+Rejoins le mouvement en silence.
+Star → Clone → Teste → Contribue.
+Pas de nom. Pas de trace. Contrôle total.
+
