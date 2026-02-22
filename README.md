@@ -5,8 +5,6 @@
 **Nanashi IA** = la marque et l’écosystème complet  
 **NanashiOS** = le cœur technique (le système d’exploitation pour agents IA autonomes)
 
-**Ce repo est le repo principal officiel du projet.**
-
 **Pas de nom. Pas de trace. Contrôle total.**
 
 ---
