@@ -1,6 +1,10 @@
 # Nanashi IA & NanashiOS 👻🛡️
 
-**Écosystème souverain d’intelligence artificielle multimodale 100 % local**
+[![License: BSL 1.1](https://img.shields.io/badge/License-BSL%201.1-blue.svg)](LICENSE)
+[![Stars](https://img.shields.io/github/stars/NanashiOS-Lab/NanashiOS?style=social)](https://github.com/NanashiOS-Lab/NanashiOS)
+
+**Écosystème souverain d’intelligence artificielle multimodale**  
+**100 % local – Zéro cloud – Contrôle total**
 
 **Nanashi IA** = la marque et l’écosystème complet  
 **NanashiOS** = le cœur technique (le système d’exploitation pour agents IA autonomes)
@@ -83,5 +87,3 @@ git clone https://github.com/NanashiOS-Lab/NanashiOS.git
 cd NanashiOS
 pip install -r requirements.txt
 python main.py --setup
-
-Pas de nom. Pas de trace. Contrôle total. 👻🛡️
