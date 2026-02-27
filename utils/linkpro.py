@@ -1,48 +1,75 @@
+# SPDX-License-Identifier: BSL-1.1
+# Copyright (c) 2026 NanashiOS-Lab. All rights reserved.
+#
+# Business Source License 1.1 – Nanashi Edition
+#
+# Utilisation non commerciale : Libre et gratuite pour tout usage personnel,
+# éducatif ou de recherche.
+#
+# Utilisation commerciale : Interdite jusqu’au 20 février 2030,
+# sauf accord écrit préalable avec NanashiOS-Lab.
+#
+# Exception Acquisition :
+# Toute entité qui acquiert plus de 50 % du contrôle du projet ou des tokens $NANA
+# obtient immédiatement une licence commerciale illimitée et perpétuelle.
+#
+# Au 20 février 2030, la licence passe automatiquement en MIT License.
+#
+# Pour toute demande de licence commerciale anticipée : nanashia256@gmail.com
+
 """
-USL-EDL LINKPRO v1.2 - Nanashi Ecosystem
-Feature: Semantic Noise Injection (Protocol Mumei Figure 2)
+USL-EDL LINKPRO v1.3 - Nanashi Ecosystem
+Semantic Noise Injection
 """
+
 import hashlib
-import random
-import string
+import os
 from datetime import datetime
 
 class LinkProProtocol:
     def __init__(self, system_id="Nanashi"):
-        self.system_id = system_id # Remplace SG195220 [cite: 2026-02-17]
-        self.redacted_terms = ["369hz", "copernague", "Nanashi", "Nanashi-AI"]
-        self.is_active = True
+        self.system_id = system_id
+        # Termes génériques à masquer (peut être chargé depuis un fichier de config externe)
+        self.redacted_terms = [
+            "Nanashi", 
+            "Nanashi-AI", 
+            "NanashiOS"
+        ]
+        self.noise_level = 24  # Longueur du bruit (recommandé pour plus de sécurité)
 
-    def _generate_noise(self, length=12):
-        """Génère le bruit cryptographique (epsilon)"""
-        chars = string.ascii_letters + string.digits + "!@#$%^&*"
-        return ''.join(random.choice(chars) for _ in range(length))
+    def _generate_noise(self):
+        """Génère un bruit cryptographique fort et aléatoire"""
+        random_seed = os.urandom(64) + str(datetime.now().timestamp()).encode()
+        return hashlib.sha256(random_seed).hexdigest()[:self.noise_level]
 
     def usl_ingress(self, user_input: str):
-        """USER SECURE LAYER: Nettoyage Entrée"""
+        """Nettoyage sécurisé de l'entrée utilisateur"""
+        if not user_input:
+            return ""
         return user_input.strip()
 
     def edl_egress(self, agent_output: str):
-        """
-        EXTERNAL DATA LINK: Split & Noise Injection
-        Applique le protocole Mumei pour l'anonymisation sortante.
-        """
-        # 1. Scrubbing (Censure des secrets) [cite: 2026-01-22]
+        """Protection de sortie avec injection de bruit sémantique"""
+        if not agent_output:
+            return agent_output
+
+        # 1. Nettoyage des termes sensibles
         sanitized = agent_output
         for term in self.redacted_terms:
             sanitized = sanitized.replace(term, "[MASK]")
 
-        # 2. Noise Injection (Epsilon)
-        # On entoure la donnée de bruit pour simuler le Split Inference
+        # 2. Injection de bruit (epsilon)
         epsilon_start = self._generate_noise()
         epsilon_end = self._generate_noise()
-        
-        # Structure de sortie : NOISE + DATA + NOISE
-        secure_packet = f"ε({epsilon_start})—{sanitized}—ε({epsilon_end})"
-        
-        # 3. Signature Blockchain (Bloc 0) [cite: 2026-01-14]
-        print(f"[BLOCKCHAIN] Proof of Intelligence validée pour {self.system_id}")
-        
+
+        # Format de sortie sécurisé
+        secure_packet = f"ε_start:{epsilon_start}—{sanitized}—ε_end:{epsilon_end}"
+
+        # Log discret (pas de données sensibles affichées)
+        print("[LINKPRO] Output protected")
+
         return secure_packet
 
+
+# Instance globale unique
 link_pro = LinkProProtocol()
