@@ -205,3 +205,25 @@ cython_debug/
 marimo/_static/
 marimo/_lsp/
 __marimo__/
+# Mac specific
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# NanashiOS specific (très important)
+secrets.py
+*.key
+*.pem
+config_local.json
+temp_*.jpg
+temp_*.png
+test_image.jpg
+
+# Jupyter / Notebooks temporaires
+.ipynb_checkpoints/
+*.ipynb
+
+# Logs et caches spécifiques
+logs/
+*.log
+cache/
