@@ -1,17 +1,33 @@
+# SPDX-License-Identifier: BSL-1.1
+# Copyright (c) 2026 NanashiOS-Lab. All rights reserved.
+#
+# Business Source License 1.1 – Nanashi Edition
+#
+# Utilisation non commerciale : Libre et gratuite pour tout usage personnel,
+# éducatif ou de recherche.
+#
+# Utilisation commerciale : Interdite jusqu’au 20 février 2030,
+# sauf accord écrit préalable avec NanashiOS-Lab.
+#
+# Exception Acquisition :
+# Toute entité qui acquiert plus de 50 % du contrôle du projet ou des tokens $NANA
+# obtient immédiatement une licence commerciale illimitée et perpétuelle.
+#
+# Au 20 février 2030, la licence passe automatiquement en MIT License.
+
 """
 MAWS Ghost Protocol v1.0
-Définition des agents autonomes du système Nanashi.
+Système d'agents autonomes pour NanashiOS
 """
+
 import sys
 import os
 
-# Ajustement pour imports
+# Ajustement du chemin pour les imports
 sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
-from config.settings import settings
-
 class GhostAgent:
-    """Classe parente pour tous les agents (Standard Mumei)"""
+    """Classe de base pour tous les agents autonomes"""
     def __init__(self, name, role, clearance_level=1):
         self.name = name
         self.role = role
@@ -19,50 +35,52 @@ class GhostAgent:
         self.active = True
 
     def log(self, message):
-        print(f"[{self.name.upper()}] {message}")
+        """Log discret et minimal"""
+        print(f"[{self.name}] {message}")
+
 
 class Blinky(GhostAgent):
-    """
-    Agent: BLINKY (Manager)
-    Rôle: Analyse la requête et distribue le travail.
-    """
+    """Agent Orchestrateur - Analyse et distribue les tâches"""
     def __init__(self):
         super().__init__("Blinky", "Orchestrator", clearance_level=5)
-    
-    def analyze_task(self, user_query):
-        self.log(f"Analyse de la mission : '{user_query}'")
-        
-        # Simulation d'analyse sémantique
-        if "code" in user_query.lower() or "python" in user_query.lower():
-            return "Aufgabe pour INKY (Dev)"
-        elif "cherche" in user_query.lower() or "info" in user_query.lower():
-            return "Aufgabe pour PINKY (Research)"
-        else:
-            return "Aufgabe générique pour le Waka Engine"
 
-# Instanciation du chef d'orchestre
-blinky = Blinky()
-# --- Agents Fantômes Spécialisés ---
+    def analyze_task(self, user_query):
+        self.log(f"Analyse de la requête : '{user_query[:60]}...'")
+        
+        # Analyse simple pour routage
+        query_lower = user_query.lower()
+        if any(word in query_lower for word in ["code", "python", "script", "programmer"]):
+            return "task:inky"
+        elif any(word in query_lower for word in ["cherche", "info", "recherche", "données"]):
+            return "task:pinky"
+        else:
+            return "task:generic"
+
 
 class Inky(GhostAgent):
-    """Agent: INKY (Développeur) - Spécialisé dans le code sécurisé."""
+    """Agent Développeur - Spécialisé dans le code sécurisé"""
     def __init__(self):
         super().__init__("Inky", "Developer", clearance_level=2)
 
+
 class Pinky(GhostAgent):
-    """Agent: PINKY (Chercheur) - Spécialisé dans l'analyse de données."""
+    """Agent Chercheur - Spécialisé dans l'analyse et la recherche"""
     def __init__(self):
         super().__init__("Pinky", "Researcher", clearance_level=2)
 
-# Initialisation du Trio Nanashi AI [cite: 2026-01-25]
+
+# Instances globales
+blinky = Blinky()
 inky = Inky()
 pinky = Pinky()
-blinky = Blinky()
+
 
 def get_active_ghosts():
-    """Retourne la liste des agents actifs sous le protocole Nanashi [cite: 2026-02-17]"""
+    """Retourne la liste des agents actifs"""
     return [blinky, inky, pinky]
 
 
-
-
+# Point d'entrée pour test rapide
+if __name__ == "__main__":
+    print("Ghost Protocol v1.0 - Agents initialisés")
+    print(f"Agents actifs : {len(get_active_ghosts())}")
