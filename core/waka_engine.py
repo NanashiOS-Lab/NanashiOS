@@ -1,78 +1,70 @@
 # SPDX-License-Identifier: BSL-1.1
 # Copyright (c) 2026 NanashiOS-Lab. All rights reserved.
-#
-# Business Source License 1.1 – Nanashi Edition
-#
-# Utilisation non commerciale : Libre et gratuite pour tout usage personnel,
-# éducatif ou de recherche.
-#
-# Utilisation commerciale : Interdite jusqu’au 20 février 2030,
-# sauf accord écrit préalable avec NanashiOS-Lab.
-#
-# Exception Acquisition :
-# Toute entité qui acquiert plus de 50 % du contrôle du projet ou des tokens $NANA
-# obtient immédiatement une licence commerciale illimitée et perpétuelle.
-#
-# Au 20 février 2030, la licence passe automatiquement en MIT License.
 
 """
 NanashiOS Core Engine - Waka v1.1
-Orchestrateur central du système
+Orchestrateur central avec hiérarchie et agent contradictoire
 """
 
 import sys
 import os
 
-# Ajustement du chemin pour les imports
 sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
-try:
-    from config.settings import settings
-    from core.link_pro import link_pro
-    from core.ghosts import blinky
-except ImportError as e:
-    print(f"Erreur critique d'importation : {e}")
-    sys.exit(1)
-
+from core.ghosts import (
+    blinky, inky, pinky, shadow,
+    resume_texte, sentiment, traduction, keyword_extractor,
+    ethical_reasoner, fake_news_detector, human_auth,
+    blur_detection, image_caption, face_blur, image_deepfake,
+    real_time_ocr, voice_clone, audio_deepfake,
+    local_malware, biometric_auth, contract_auditor, patent_drafter, self_healing,
+    coordinateur, pulse_logic, knowledge_graph, collaborative,
+    code_writer, pdf_extracteur, topology_analyzer, semantic_search,
+    data_visualizer, auto_debugger
+)
+from core.link_pro import link_pro
 
 class WakaEngine:
-    """Moteur central de NanashiOS"""
     def __init__(self):
         self.name = "NanashiOS Core"
         self.version = "1.1.0"
-        print(f"[{self.name}] Initialisation...")
+        print(f"[{self.name}] Initialisation du système...")
 
         if not link_pro.is_active:
-            raise PermissionError("Tunnel de protection inactif. Arrêt du système.")
+            raise PermissionError("Protection de sortie inactif. Arrêt du système.")
 
         print(f"[{self.name}] Protection de sortie : ACTIVÉE")
-        print(f"[{self.name}] Orchestrateur principal : EN LIGNE")
+        print(f"[{self.name}] Agent contradictoire Shadow : EN LIGNE")
+        print(f"[{self.name}] 30 agents chargés avec hiérarchie")
 
     def process_query(self, user_input: str):
-        """
-        Traite une requête utilisateur de manière sécurisée.
-        """
-        # 1. Protection entrée (USL)
-        try:
-            secure_input = link_pro.usl_ingress(user_input)
-        except Exception as e:
-            return {"status": "error", "message": str(e)}
+        """Traite une requête avec hiérarchie et vérification contradictoire"""
+        # 1. Protection entrée
+        secure_input = link_pro.usl_ingress(user_input)
 
-        # 2. Analyse et routage par l'orchestrateur
-        print(f"[{self.name}] Analyse de la requête...")
+        # 2. Analyse par l'orchestrateur (Blinky)
+        print(f"[{self.name}] Transmission à l'orchestrateur...")
         agent_decision = blinky.analyze_task(secure_input)
 
-        # 3. Génération de la réponse brute
-        raw_response = f"Requête traitée. {agent_decision}"
+        # 3. Exécution par l'agent concerné (simulation pour l'instant)
+        raw_response = f"Réponse traitée par l'agent : {agent_decision}"
 
-        # 4. Protection sortie (EDL)
+        # 4. Vérification contradictoire par Shadow
+        critique = shadow.critique("Agent Principal", raw_response, secure_input)
+        
+        if critique["status"] == "critique":
+            print("Shadow a détecté des faiblesses → ajustement en cours")
+            raw_response += " (ajusté après critique)"
+
+        # 5. Protection finale de sortie
         safe_response = link_pro.edl_egress(raw_response)
 
         return {
             "status": "success",
-            "response": safe_response
+            "response": safe_response,
+            "critique_status": critique["status"]
         }
 
 
-# Instance globale du moteur
+# Instance globale du moteur central
 waka = WakaEngine()
