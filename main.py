@@ -18,8 +18,7 @@
 # Pour toute demande de licence commerciale anticipée : nanashia256@gmail.com
 
 """
-MAWS - Multimodal Agentic Waka System
-Point d'entrée principal de NanashiOS
+NanashiOS - Point d'entrée principal
 Usage: python main.py "Votre requête" [--interactive]
 """
 
@@ -27,26 +26,26 @@ import sys
 import argparse
 import logging
 from core.waka_engine import waka
-from core.link_pro import link_pro   # Protection de sortie
+from core.link_pro import link_pro   # Protection de sortie avec bruit sémantique
 
 # Configuration du logging
 logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
 
 def main():
-    parser = argparse.ArgumentParser(description="MAWS: Multimodal Agentic Waka System - NanashiOS")
+    parser = argparse.ArgumentParser(description="NanashiOS - Système d'IA Souveraine Locale")
     parser.add_argument("query", nargs="?", help="La tâche à exécuter")
     parser.add_argument("-i", "--interactive", action="store_true", help="Mode conversationnel interactif")
-    parser.add_argument("--version", action="version", version=f"MAWS v{waka.version} (NanashiOS)")
+    parser.add_argument("--version", action="version", version="NanashiOS v1.0 (2026)")
 
     args = parser.parse_args()
 
     if args.interactive or not args.query:
-        print(f"\nNanashiOS - MAWS v{waka.version}")
+        print(f"\nNanashiOS v1.0")
         print("Mode interactif activé. Tapez 'exit' pour quitter.\n")
 
         while True:
             try:
-                user_input = input("Nanashi@maws:~$ ").strip()
+                user_input = input("Nanashi@nanashios:~$ ").strip()
                 if user_input.lower() in ['exit', 'quit', 'q']:
                     print("Fermeture de NanashiOS.")
                     break
@@ -64,6 +63,7 @@ def main():
     else:
         try:
             raw_result = waka.process_query(args.query)
+            # Protection de la sortie
             protected_result = link_pro.edl_egress(raw_result.get('response', ''))
             print(protected_result)
         except Exception as e:
