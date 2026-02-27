@@ -1,108 +1,219 @@
 {
+  "license": "BSL-1.1",
+  "copyright": "Copyright (c) 2026 NanashiOS-Lab. All rights reserved.",
+  "license_details": {
+    "name": "Business Source License 1.1 - Nanashi Edition",
+    "non_commercial_until": "2030-02-20",
+    "commercial_exception": "Toute entité acquérant plus de 50% du contrôle du projet ou des tokens $NANA obtient une licence commerciale illimitée immédiate.",
+    "auto_mit_date": "2030-02-20"
+  },
   "version": "1.0.0",
   "description": "Registre officiel des 30 agents disponibles pour NanashiOS",
-  "last_updated": "2026-02-21",
+  "last_updated": "2026-02-23",
   "total_agents": 30,
   "agents": [
     {
-      "id": "agent-1-blur-detection-v1",
+      "id": "blur-detection-v1",
       "name": "Blur Detection Agent",
-      "path": "agents/agent-1-blur-detection-v1/manifest.json"
+      "category": "vision",
+      "path": "agents/blur-detection-v1/manifest.json",
+      "status": "active"
     },
     {
-      "id": "agent-2-real-time-ocr",
+      "id": "real-time-ocr-v1",
       "name": "Real-time OCR Agent",
-      "path": "agents/agent-2-real-time-ocr/manifest.json"
+      "category": "vision",
+      "path": "agents/real-time-ocr-v1/manifest.json",
+      "status": "active"
     },
     {
       "id": "biometric-local-auth-v1",
       "name": "Biometric Local Auth Agent",
-      "path": "agents/biometric-local-auth-v1/manifest.json"
+      "category": "security",
+      "path": "agents/biometric-local-auth-v1/manifest.json",
+      "status": "active"
     },
     {
       "id": "code-writer-v1",
       "name": "Code Writer Agent",
-      "path": "agents/code-writer-v1/manifest.json"
+      "category": "tools",
+      "path": "agents/code-writer-v1/manifest.json",
+      "status": "active"
     },
     {
       "id": "collaborative-learning-v1",
       "name": "Collaborative Learning Agent",
-      "path": "agents/collaborative-learning-v1/manifest.json"
+      "category": "advanced",
+      "path": "agents/collaborative-learning-v1/manifest.json",
+      "status": "active"
     },
     {
       "id": "contract-auditor-v1",
       "name": "Contract Auditor Agent",
-      "path": "agents/contract-auditor-v1/manifest.json"
+      "category": "security",
+      "path": "agents/contract-auditor-v1/manifest.json",
+      "status": "active"
     },
     {
       "id": "coordinateur-multi-agents-v1",
       "name": "Coordinateur Multi-Agents",
-      "path": "agents/coordinateur-multi-agents-v1/manifest.json"
+      "category": "coordination",
+      "path": "agents/coordinateur-multi-agents-v1/manifest.json",
+      "status": "active"
     },
     {
       "id": "détection-émotion-v1",
       "name": "Emotion Detection Agent",
-      "path": "agents/détection-émotion-v1/manifest.json"
-    },
-    {
-      "id": "energy-optimizer-v1",
-      "name": "Energy Optimizer Agent",
-      "path": "agents/energy-optimizer-v1/manifest.json"
+      "category": "text",
+      "path": "agents/détection-émotion-v1/manifest.json",
+      "status": "active"
     },
     {
       "id": "ethical-reasoner-v1",
       "name": "Ethical Reasoner Agent",
-      "path": "agents/ethical-reasoner-v1/manifest.json"
+      "category": "text",
+      "path": "agents/ethical-reasoner-v1/manifest.json",
+      "status": "active"
     },
     {
       "id": "face-blur-v1",
       "name": "Face Blur Agent",
-      "path": "agents/face-blur-v1/manifest.json"
+      "category": "vision",
+      "path": "agents/face-blur-v1/manifest.json",
+      "status": "active"
     },
     {
       "id": "fake-news-detector-v1",
       "name": "Fake News Detector Agent",
-      "path": "agents/fake-news-detector-v1/manifest.json"
+      "category": "text",
+      "path": "agents/fake-news-detector-v1/manifest.json",
+      "status": "active"
     },
     {
       "id": "human-auth-v1",
       "name": "Human Authenticity Agent",
-      "path": "agents/human-auth-v1/manifest.json"
+      "category": "security",
+      "path": "agents/human-auth-v1/manifest.json",
+      "status": "active"
     },
     {
       "id": "image-caption-v1",
       "name": "Image Caption Agent",
-      "path": "agents/image-caption-v1/manifest.json"
+      "category": "vision",
+      "path": "agents/image-caption-v1/manifest.json",
+      "status": "active"
+    },
+    {
+      "id": "image-deepfake-detector-v1",
+      "name": "Image Deepfake Detector Agent",
+      "category": "vision",
+      "path": "agents/image-deepfake-detector-v1/manifest.json",
+      "status": "active"
     },
     {
       "id": "keyword-extractor-v1",
       "name": "Keyword Extractor Agent",
-      "path": "agents/keyword-extractor-v1/manifest.json"
+      "category": "text",
+      "path": "agents/keyword-extractor-v1/manifest.json",
+      "status": "active"
     },
     {
       "id": "local-malware-detector-v1",
       "name": "Local Malware Detector Agent",
-      "path": "agents/local-malware-detector-v1/manifest.json"
+      "category": "security",
+      "path": "agents/local-malware-detector-v1/manifest.json",
+      "status": "active"
     },
     {
       "id": "patent-drafter-v1",
       "name": "Patent Drafter Agent",
-      "path": "agents/patent-drafter-v1/manifest.json"
+      "category": "tools",
+      "path": "agents/patent-drafter-v1/manifest.json",
+      "status": "active"
     },
     {
       "id": "pdf-extracteur-v1",
       "name": "PDF Extractor Agent",
-      "path": "agents/pdf-extracteur-v1/manifest.json"
+      "category": "tools",
+      "path": "agents/pdf-extracteur-v1/manifest.json",
+      "status": "active"
     },
     {
       "id": "personal-knowledge-graph-v1",
       "name": "Personal Knowledge Graph Agent",
-      "path": "agents/personal-knowledge-graph-v1/manifest.json"
+      "category": "advanced",
+      "path": "agents/personal-knowledge-graph-v1/manifest.json",
+      "status": "active"
     },
     {
       "id": "prompt-optimizer-v1",
       "name": "Prompt Optimizer Agent",
-      "path": "agents/prompt-optimizer-v1/manifest.json"
+      "category": "text",
+      "path": "agents/prompt-optimizer-v1/manifest.json",
+      "status": "active"
     },
     {
-      "id
+      "id": "pulse-logic-v1",
+      "name": "Pulse Logic Agent",
+      "category": "advanced",
+      "path": "agents/pulse-logic-v1/manifest.json",
+      "status": "active"
+    },
+    {
+      "id": "real-time-ocr-v1",
+      "name": "Real-time OCR Agent",
+      "category": "vision",
+      "path": "agents/real-time-ocr-v1/manifest.json",
+      "status": "active"
+    },
+    {
+      "id": "self-healing-v1",
+      "name": "Self Healing Agent",
+      "category": "advanced",
+      "path": "agents/self-healing-v1/manifest.json",
+      "status": "active"
+    },
+    {
+      "id": "semantic-search-v1",
+      "name": "Semantic Search Agent",
+      "category": "text",
+      "path": "agents/semantic-search-v1/manifest.json",
+      "status": "active"
+    },
+    {
+      "id": "sentiment-v1",
+      "name": "Sentiment Analysis Agent",
+      "category": "text",
+      "path": "agents/sentiment-v1/manifest.json",
+      "status": "active"
+    },
+    {
+      "id": "topology-analyzer-v1",
+      "name": "Topology Analyzer Agent",
+      "category": "tools",
+      "path": "agents/topology-analyzer-v1/manifest.json",
+      "status": "active"
+    },
+    {
+      "id": "traduction-v1",
+      "name": "Traduction Agent",
+      "category": "text",
+      "path": "agents/traduction-v1/manifest.json",
+      "status": "active"
+    },
+    {
+      "id": "voice-clone-v1",
+      "name": "Voice Clone Agent",
+      "category": "audio",
+      "path": "agents/voice-clone-v1/manifest.json",
+      "status": "active"
+    },
+    {
+      "id": "audio-deepfake-detector-v1",
+      "name": "Audio Deepfake Detector Agent",
+      "category": "audio",
+      "path": "agents/audio-deepfake-detector-v1/manifest.json",
+      "status": "active"
+    }
+  ]
+}
