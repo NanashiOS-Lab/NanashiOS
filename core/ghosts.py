@@ -45,6 +45,13 @@ class Blinky(GhostAgent):
     def __init__(self):
         super().__init__("Blinky", "Orchestrator Final", clearance_level=5, supervisor=None)
 
+    def analyze_task(self, user_input: str) -> str:
+        self.log(f"Analyse de la tâche : {user_input[:60]}...")
+        return f"Tâche analysée par Blinky : {user_input}"
+
+    def process(self, input_data):
+        return self.analyze_task(input_data)
+
 
 class Inky(GhostAgent):
     """Chef du Domaine Développement"""
@@ -323,6 +330,12 @@ class AutoDebugger(GhostAgent):
         return "Bug corrigé"
 
 # ====================== INSTANCES GLOBALES ======================
+
+# Instances de la hiérarchie (doivent être créées avant les 30 agents)
+blinky = Blinky()
+inky = Inky()
+pinky = Pinky()
+shadow = Shadow()
 
 # Instances des 30 agents
 resume_texte = ResumeTexte()

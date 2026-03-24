@@ -14,11 +14,12 @@ class LinkProProtocol:
     def __init__(self, system_id="Nanashi"):
         self.system_id = system_id
         self.redacted_terms = [
-            "Nanashi", 
-            "Nanashi-AI", 
+            "Nanashi",
+            "Nanashi-AI",
             "NanashiOS"
         ]
         self.noise_level = 24
+        self.is_active = True
 
     def _generate_noise(self):
         """Génère un bruit cryptographique fort"""
