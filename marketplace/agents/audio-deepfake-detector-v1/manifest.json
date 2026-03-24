@@ -1,0 +1,52 @@
+{
+  "id": "audio-deepfake-detector-v1",
+  "name": "Audio Deepfake Detector Agent",
+  "name_fr": "Agent Détecteur de Deepfake Audio",
+  "description": "Détecte si un audio est une voix synthétique ou clonée via un modèle local.",
+  "author": "NanashiOS-Lab",
+  "version": "1.0.0",
+  "license": "BSL-1.1",
+  "license_note": "Business Source License 1.1 - Commercial use restricted until 20 February 2030",
+  "inputs": [
+    {
+      "name": "audio",
+      "type": "audio",
+      "formats": [
+        "wav",
+        "mp3",
+        "ogg"
+      ],
+      "description": "Fichier audio à analyser"
+    }
+  ],
+  "outputs": [
+    {
+      "name": "is_deepfake",
+      "type": "bool",
+      "description": "True si la voix est synthétique"
+    },
+    {
+      "name": "confidence",
+      "type": "float",
+      "description": "Score de confiance (0-1)"
+    },
+    {
+      "name": "analysis",
+      "type": "string",
+      "description": "Détails de l'analyse spectrale"
+    }
+  ],
+  "dependencies": [
+    "librosa>=0.10.0",
+    "numpy>=1.24.0",
+    "torch>=2.0.0"
+  ],
+  "price": "free",
+  "tags": [
+    "audio",
+    "deepfake",
+    "detection",
+    "voice",
+    "security"
+  ]
+}

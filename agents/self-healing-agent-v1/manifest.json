@@ -6,7 +6,7 @@
   "description": "Détecte ses propres erreurs, bugs ou dysfonctionnements et tente de les corriger automatiquement. Vrai agent autonome et résilient.",
   "author": "NanashiOS-Lab",
   "version": "1.0.0",
-  "license": "license": "BSL-1.1",
+  "license": "BSL-1.1",
   "license_note": "Business Source License 1.1 - Commercial use restricted until 20 February 2030",
   "inputs": [
     {

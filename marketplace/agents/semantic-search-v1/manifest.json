@@ -1,0 +1,52 @@
+{
+  "id": "semantic-search-v1",
+  "name": "Semantic Search Agent",
+  "name_fr": "Agent de Recherche Sémantique",
+  "description": "Recherche sémantique dans un corpus par embeddings locaux. Utile pour agents RAG et recherche par sens.",
+  "author": "NanashiOS-Lab",
+  "version": "1.0.0",
+  "license": "BSL-1.1",
+  "license_note": "Business Source License 1.1 - Commercial use restricted until 20 February 2030",
+  "inputs": [
+    {
+      "name": "query",
+      "type": "string",
+      "description": "Requête de recherche"
+    },
+    {
+      "name": "corpus",
+      "type": "array[string]",
+      "description": "Documents à rechercher"
+    },
+    {
+      "name": "top_k",
+      "type": "integer",
+      "description": "Nombre de résultats (défaut 5)",
+      "required": false
+    }
+  ],
+  "outputs": [
+    {
+      "name": "results",
+      "type": "array[object]",
+      "description": "Documents pertinents avec scores"
+    },
+    {
+      "name": "top_result",
+      "type": "string",
+      "description": "Résultat le plus pertinent"
+    }
+  ],
+  "dependencies": [
+    "sentence-transformers>=2.2.0",
+    "numpy>=1.24.0"
+  ],
+  "price": "free",
+  "tags": [
+    "nlp",
+    "search",
+    "semantic",
+    "embeddings",
+    "rag"
+  ]
+}

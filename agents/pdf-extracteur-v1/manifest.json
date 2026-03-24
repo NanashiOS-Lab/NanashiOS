@@ -6,7 +6,7 @@
   "description": "Extrait texte, tables et images d’un PDF. Utile pour agents qui traitent documents administratifs, contrats, factures.",
   "author": "NanashiOS-Lab",
   "version": "1.0.0",
-  "license": "license": "BSL-1.1",
+  "license": "BSL-1.1",
   "license_note": "Business Source License 1.1 - Commercial use restricted until 20 February 2030",
   "inputs": [
     {
