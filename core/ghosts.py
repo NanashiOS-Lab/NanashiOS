@@ -20,6 +20,23 @@ NanashiOS - GhostAgent System
 Hiérarchie complète avec les 30 agents
 """
 
+import importlib.util
+import os
+
+_MKT_DIR = os.path.join(os.path.dirname(os.path.dirname(__file__)), "marketplace", "agents")
+
+
+def _load_marketplace_agent(agent_id: str):
+    """Charge le module agent.py depuis marketplace/agents/<agent_id>/."""
+    path = os.path.join(_MKT_DIR, agent_id, "agent.py")
+    if not os.path.exists(path):
+        return None
+    spec = importlib.util.spec_from_file_location(f"mkt_{agent_id}", path)
+    mod = importlib.util.module_from_spec(spec)
+    spec.loader.exec_module(mod)
+    return mod
+
+
 class GhostAgent:
     """Classe de base pour tous les agents autonomes"""
     def __init__(self, name, role, clearance_level=1, supervisor=None):
@@ -33,6 +50,17 @@ class GhostAgent:
         """Log discret"""
         print(f"[{self.name}] {message}")
 
+    def _delegate(self, agent_id: str, input_data: dict) -> str:
+        """Délègue l'exécution à l'implémentation marketplace et formate la réponse."""
+        mod = _load_marketplace_agent(agent_id)
+        if mod is None:
+            return f"[{self.name}] Agent marketplace '{agent_id}' introuvable."
+        result = mod.run(input_data)
+        # Formate le dict en une réponse lisible
+        skip = {"status"}
+        parts = [f"{k} : {v}" for k, v in result.items() if k not in skip and v not in (None, "", [], {})]
+        return " | ".join(parts) if parts else str(result)
+
     def process(self, input_data):
         """Méthode à surcharger par chaque agent"""
         raise NotImplementedError("Chaque agent doit implémenter process()")
@@ -44,6 +72,13 @@ class Blinky(GhostAgent):
     """Boss Final - Orchestrateur Suprême"""
     def __init__(self):
         super().__init__("Blinky", "Orchestrator Final", clearance_level=5, supervisor=None)
+
+    def analyze_task(self, user_input: str) -> str:
+        self.log(f"Analyse de la tâche : {user_input[:60]}...")
+        return f"Tâche analysée par Blinky : {user_input}"
+
+    def process(self, input_data):
+        return self.analyze_task(input_data)
 
 
 class Inky(GhostAgent):
@@ -86,11 +121,10 @@ class Shadow(GhostAgent):
 class ResumeTexte(GhostAgent):
     def __init__(self):
         super().__init__("ResumeTexte", "Text Summarization", 2, pinky)
-        self.max_length = 150
 
     def process(self, text):
         self.log("Résumé en cours")
-        return f"Résumé : {text[:self.max_length]}..."
+        return self._delegate("résumé-texte-v1", {"text": text})
 
 class Sentiment(GhostAgent):
     def __init__(self):
@@ -98,16 +132,15 @@ class Sentiment(GhostAgent):
 
     def process(self, text):
         self.log("Analyse sentimentale")
-        return "Sentiment positif (confiance 82%)"
+        return self._delegate("sentiment-v1", {"text": text})
 
 class Traduction(GhostAgent):
     def __init__(self):
         super().__init__("Traduction", "Translation", 2, pinky)
-        self.default_target = "en"
 
     def process(self, text):
         self.log("Traduction en cours")
-        return f"[Traduit] {text}"
+        return self._delegate("traduction-v1", {"text": text})
 
 class KeywordExtractor(GhostAgent):
     def __init__(self):
@@ -115,7 +148,7 @@ class KeywordExtractor(GhostAgent):
 
     def process(self, text):
         self.log("Extraction mots-clés")
-        return "mots-clés : IA, souveraineté, contrôle"
+        return self._delegate("keyword-extractor-v1", {"text": text})
 
 class EthicalReasoner(GhostAgent):
     def __init__(self):
@@ -123,7 +156,7 @@ class EthicalReasoner(GhostAgent):
 
     def process(self, query):
         self.log("Raisonnement éthique")
-        return "Action acceptable"
+        return self._delegate("ethical-reasoner-v1", {"query": query})
 
 class FakeNewsDetector(GhostAgent):
     def __init__(self):
@@ -131,7 +164,7 @@ class FakeNewsDetector(GhostAgent):
 
     def process(self, text):
         self.log("Vérification fake news")
-        return "Probabilité fake news : 12%"
+        return self._delegate("fake-news-detector-v1", {"text": text})
 
 class HumanAuth(GhostAgent):
     def __init__(self):
@@ -139,7 +172,7 @@ class HumanAuth(GhostAgent):
 
     def process(self, text):
         self.log("Vérification authenticité")
-        return "Probabilité humaine : 94%"
+        return self._delegate("human-auth-v1", {"text": text})
 
 # --- Agents Vision ---
 class BlurDetection(GhostAgent):
@@ -148,7 +181,7 @@ class BlurDetection(GhostAgent):
 
     def process(self, image_path):
         self.log(f"Analyse flou : {image_path}")
-        return "Image nette"
+        return self._delegate("blur-detection-v1", {"image": image_path})
 
 class ImageCaption(GhostAgent):
     def __init__(self):
@@ -156,7 +189,7 @@ class ImageCaption(GhostAgent):
 
     def process(self, image_path):
         self.log(f"Description image : {image_path}")
-        return "Une personne devant un ordinateur"
+        return self._delegate("image-caption-v1", {"image": image_path})
 
 class FaceBlur(GhostAgent):
     def __init__(self):
@@ -164,15 +197,15 @@ class FaceBlur(GhostAgent):
 
     def process(self, image_path):
         self.log(f"Floutage visages : {image_path}")
-        return "Visages floutés"
+        return self._delegate("face-blur-v1", {"image": image_path})
 
 class ImageDeepfakeDetector(GhostAgent):
     def __init__(self):
         super().__init__("ImageDeepfakeDetector", "Deepfake Detection", 4, inky)
 
     def process(self, image_path):
-        self.log(f"Deepfake analysis : {image_path}")
-        return "Authentique (confiance 94%)"
+        self.log(f"Analyse deepfake image : {image_path}")
+        return self._delegate("image-deepfake-detector-v1", {"image": image_path})
 
 # --- Agents Audio ---
 class RealTimeOCR(GhostAgent):
@@ -181,7 +214,7 @@ class RealTimeOCR(GhostAgent):
 
     def process(self, image_path):
         self.log(f"OCR : {image_path}")
-        return "Texte extrait"
+        return self._delegate("agent-2-real-time-ocr", {"image": image_path})
 
 class VoiceClone(GhostAgent):
     def __init__(self):
@@ -189,15 +222,15 @@ class VoiceClone(GhostAgent):
 
     def process(self, audio_path):
         self.log(f"Clonage voix : {audio_path}")
-        return "Voix clonée"
+        return self._delegate("voice-clone-v1", {"audio_path": audio_path, "text": ""})
 
 class AudioDeepfakeDetector(GhostAgent):
     def __init__(self):
         super().__init__("AudioDeepfakeDetector", "Audio Analysis", 4, pinky)
 
     def process(self, audio_path):
-        self.log(f"Analyse audio : {audio_path}")
-        return "Voix authentique"
+        self.log(f"Analyse deepfake audio : {audio_path}")
+        return self._delegate("audio-deepfake-detector-v1", {"audio": audio_path})
 
 # --- Agents Sécurité ---
 class LocalMalwareDetector(GhostAgent):
@@ -206,7 +239,7 @@ class LocalMalwareDetector(GhostAgent):
 
     def process(self, file_path):
         self.log(f"Scan malware : {file_path}")
-        return "Aucun malware détecté"
+        return self._delegate("local-malware-detector-v1", {"file_path": file_path})
 
 class BiometricLocalAuth(GhostAgent):
     def __init__(self):
@@ -214,7 +247,7 @@ class BiometricLocalAuth(GhostAgent):
 
     def process(self, data):
         self.log("Vérification biométrique")
-        return "Authentification réussie"
+        return self._delegate("biometric-local-auth-v1", {"biometric_data": data if isinstance(data, dict) else {}})
 
 class ContractAuditor(GhostAgent):
     def __init__(self):
@@ -222,7 +255,7 @@ class ContractAuditor(GhostAgent):
 
     def process(self, code):
         self.log("Audit contrat")
-        return "Contrat sécurisé"
+        return self._delegate("contract-auditor-v1", {"contract_code": code})
 
 class PatentDrafter(GhostAgent):
     def __init__(self):
@@ -230,7 +263,7 @@ class PatentDrafter(GhostAgent):
 
     def process(self, idea):
         self.log("Rédaction brevet")
-        return "Brevet rédigé"
+        return self._delegate("patent-drafter-v1", {"idea": idea})
 
 class SelfHealing(GhostAgent):
     def __init__(self):
@@ -238,7 +271,7 @@ class SelfHealing(GhostAgent):
 
     def process(self, error):
         self.log("Auto-réparation")
-        return "Système réparé"
+        return self._delegate("self-healing-v1", {"error_log": str(error)})
 
 # --- Agents Coordination & Avancé ---
 class CoordinateurMultiAgents(GhostAgent):
@@ -247,7 +280,7 @@ class CoordinateurMultiAgents(GhostAgent):
 
     def process(self, task):
         self.log("Coordination multi-agents")
-        return "Tâche distribuée"
+        return self._delegate("coordinateur-multi-agents-v1", {"task": task, "available_agents": []})
 
 class PulseLogic(GhostAgent):
     def __init__(self):
@@ -255,7 +288,7 @@ class PulseLogic(GhostAgent):
 
     def process(self, query):
         self.log("Raisonnement logique")
-        return "Conclusion logique"
+        return self._delegate("pulse-logic-v1", {"premises": [], "question": query})
 
 class PersonalKnowledgeGraph(GhostAgent):
     def __init__(self):
@@ -263,7 +296,7 @@ class PersonalKnowledgeGraph(GhostAgent):
 
     def process(self, data):
         self.log("Mise à jour graphe")
-        return "Graphe mis à jour"
+        return self._delegate("personal-knowledge-graph-v1", {"action": "add", "entity": str(data)[:50]})
 
 class CollaborativeLearning(GhostAgent):
     def __init__(self):
@@ -271,7 +304,7 @@ class CollaborativeLearning(GhostAgent):
 
     def process(self, data):
         self.log("Apprentissage collaboratif")
-        return "Connaissances partagées"
+        return self._delegate("collaborative-learning-v1", {"local_knowledge": [], "shared_knowledge": [str(data)]})
 
 # --- Agents Outils Techniques ---
 class CodeWriter(GhostAgent):
@@ -280,7 +313,7 @@ class CodeWriter(GhostAgent):
 
     def process(self, request):
         self.log("Génération code")
-        return "Code généré"
+        return self._delegate("code-writer-v1", {"task": request, "language": "python"})
 
 class PDFExtracteur(GhostAgent):
     def __init__(self):
@@ -288,7 +321,7 @@ class PDFExtracteur(GhostAgent):
 
     def process(self, pdf_path):
         self.log(f"Extraction PDF : {pdf_path}")
-        return "Texte extrait"
+        return self._delegate("pdf-extracteur-v1", {"pdf_path": pdf_path})
 
 class TopologyAnalyzer(GhostAgent):
     def __init__(self):
@@ -296,7 +329,7 @@ class TopologyAnalyzer(GhostAgent):
 
     def process(self, data):
         self.log("Analyse topologique")
-        return "Topologie analysée"
+        return self._delegate("topologique-v1", {"data": data if isinstance(data, dict) else {}})
 
 class SemanticSearch(GhostAgent):
     def __init__(self):
@@ -304,7 +337,7 @@ class SemanticSearch(GhostAgent):
 
     def process(self, query):
         self.log("Recherche sémantique")
-        return "Résultats trouvés"
+        return self._delegate("semantic-search-v1", {"query": query, "corpus": []})
 
 class DataVisualizer(GhostAgent):
     def __init__(self):
@@ -312,7 +345,7 @@ class DataVisualizer(GhostAgent):
 
     def process(self, data):
         self.log("Visualisation données")
-        return "Graphique généré"
+        return f"Visualisation demandée pour : {str(data)[:100]}. Installer matplotlib pour le rendu graphique."
 
 class AutoDebugger(GhostAgent):
     def __init__(self):
@@ -320,9 +353,15 @@ class AutoDebugger(GhostAgent):
 
     def process(self, error_log):
         self.log("Débogage automatique")
-        return "Bug corrigé"
+        return self._delegate("self-healing-v1", {"error_log": str(error_log)})
 
 # ====================== INSTANCES GLOBALES ======================
+
+# Instances de la hiérarchie (doivent être créées avant les 30 agents)
+blinky = Blinky()
+inky = Inky()
+pinky = Pinky()
+shadow = Shadow()
 
 # Instances des 30 agents
 resume_texte = ResumeTexte()

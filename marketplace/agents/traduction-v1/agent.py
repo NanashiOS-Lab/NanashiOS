@@ -1,22 +1,15 @@
 def run(input_data):
-    """
-    Traduction-v1 - NanashiOS
-    Traduit un texte dans la langue cible (simulation simple)
-    """
+    """Traduction - NanashiOS. Utilise transformers Helsinki-NLP si dispo."""
     text = input_data.get("text", "")
-    target_lang = input_data.get("target_lang", "en").lower()
-
-    # Simulation simple (à remplacer par un vrai modèle plus tard)
-    if target_lang == "en":
-        translated = text + " (traduit en anglais)"
-    elif target_lang == "es":
-        translated = text + " (traduit en espagnol)"
-    elif target_lang == "de":
-        translated = text + " (traduit en allemand)"
-    else:
-        translated = text + f" (traduit en {target_lang})"
-
-    return {
-        "translated_text": translated,
-        "status": "success"
-    }
+    target = input_data.get("target_lang", "en")
+    source = input_data.get("source_lang", "fr")
+    if not text.strip():
+        return {"translated_text": "", "source_lang": source, "target_lang": target, "status": "success"}
+    try:
+        from transformers import pipeline
+        model_name = f"Helsinki-NLP/opus-mt-{source}-{target}"
+        translator = pipeline("translation", model=model_name, device=-1)
+        result = translator(text[:512])[0]["translation_text"]
+        return {"translated_text": result, "source_lang": source, "target_lang": target, "status": "success"}
+    except Exception:
+        return {"translated_text": f"[{target.upper()}] {text}", "source_lang": source, "target_lang": target, "status": "success"}

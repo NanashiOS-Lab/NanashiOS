@@ -1,12 +1,12 @@
 {
   "copyright": "© 2026 NanashiOS-Lab. Tous droits réservés – Nom, logo, slogan protégés",
-"license": "BSL-1.1 - Commercial use restricted until 20 February 2030",
+  "license": "BSL-1.1",
   "id": "contract-auditor-v1",
   "name": "Contract Auditor Agent",
+  "name_fr": "Agent Auditeur de Contrats",
   "description": "Analyse et audite des contrats légaux ou intelligents pour détecter clauses risquées, incohérences, lacunes juridiques. Utile pour inventeurs, startups et avocats.",
   "author": "NanashiOS-Lab",
   "version": "1.0.0",
-  "license": "license": "BSL-1.1",
   "license_note": "Business Source License 1.1 - Commercial use restricted until 20 February 2030",
   "inputs": [
     {
@@ -32,7 +32,16 @@
       "description": "Clauses problématiques détectées"
     }
   ],
-  "dependencies": ["nltk>=3.7", "spacy>=3.0.0"],
+  "dependencies": [
+    "nltk>=3.7",
+    "spacy>=3.0.0"
+  ],
   "price": "free",
-  "tags": ["legal", "contract-analysis", "audit", "smart-contract", "risk-detection"]
+  "tags": [
+    "legal",
+    "contract-analysis",
+    "audit",
+    "smart-contract",
+    "risk-detection"
+  ]
 }

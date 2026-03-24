@@ -1,6 +1,7 @@
 {
   "id": "code-writer-v1",
   "name": "Code Writer Agent",
+  "name_fr": "Agent Rédacteur de Code",
   "description": "Écrit, refactorise, debugge et documente du code dans plusieurs langages (Python, JS, Rust, etc.). Utile pour agents autonomes qui génèrent du code souverain.",
   "author": "NanashiOS-Lab",
   "version": "1.0.0",
@@ -31,7 +32,15 @@
       "description": "Explication du code"
     }
   ],
-  "dependencies": ["black>=22.0.0", "pycodestyle>=2.9.0"],
+  "dependencies": [
+    "black>=22.0.0",
+    "pycodestyle>=2.9.0"
+  ],
   "price": "free",
-  "tags": ["code-generation", "dev-tools", "refactoring", "debug"]
+  "tags": [
+    "code-generation",
+    "dev-tools",
+    "refactoring",
+    "debug"
+  ]
 }

@@ -1,6 +1,7 @@
 {
   "id": "keyword-extractor-v1",
   "name": "Keyword Extractor Agent",
+  "name_fr": "Agent Extracteur de Mots-Clés",
   "description": "Extrait les mots-clés et entités nommées d’un texte (avec spaCy ou KeyBERT). Utile pour recherche, tagging, résumé intelligent et analyse de contenu.",
   "author": "NanashiOS-Lab",
   "version": "1.0.0",
@@ -25,7 +26,15 @@
       "description": "Entités nommées détectées (personnes, lieux, organisations...)"
     }
   ],
-  "dependencies": ["spacy>=3.0.0", "keybert>=0.7.0"],
+  "dependencies": [
+    "spacy>=3.0.0",
+    "keybert>=0.7.0"
+  ],
   "price": "free",
-  "tags": ["nlp", "keyword-extraction", "entity-recognition", "text-analysis"]
+  "tags": [
+    "nlp",
+    "keyword-extraction",
+    "entity-recognition",
+    "text-analysis"
+  ]
 }

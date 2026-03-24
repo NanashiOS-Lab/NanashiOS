@@ -1,21 +1,20 @@
 def run(input_data):
-    """
-    Self-Learning-v1 - NanashiOS
-    Apprend de nouvelles tâches à partir d’exemples
-    """
-    task_example = input_data.get("task_example", "")
-    user_feedback = input_data.get("user_feedback", "positif")
-
-    # Simulation simple (à remplacer par vrai apprentissage plus tard)
-    if "positif" in user_feedback.lower():
-        learned_behavior = f"Tâche apprise avec succès : {task_example}"
-        confidence = 0.85
-    else:
-        learned_behavior = f"Tâche révisée suite à feedback négatif : {task_example}"
-        confidence = 0.65
-
-    return {
-        "learned_behavior": learned_behavior,
-        "confidence": confidence,
-        "status": "success"
-    }
+    """Self Learning - NanashiOS. Apprentissage incrémental local."""
+    import json, os, hashlib
+    observation = input_data.get("observation", "")
+    feedback = input_data.get("feedback", "")
+    knowledge_path = input_data.get("knowledge_path", "/tmp/nanashi_knowledge.json")
+    knowledge = {}
+    if os.path.exists(knowledge_path):
+        try:
+            with open(knowledge_path) as f: knowledge = json.load(f)
+        except Exception: knowledge = {}
+    if observation:
+        key = hashlib.md5(observation.encode()).hexdigest()[:8]
+        knowledge[key] = {"observation": observation, "feedback": feedback, "count": knowledge.get(key, {}).get("count", 0) + 1}
+    try:
+        with open(knowledge_path, "w") as f: json.dump(knowledge, f)
+        persisted = True
+    except Exception: persisted = False
+    return {"entries_learned": len(knowledge), "last_entry": observation[:100],
+            "persisted": persisted, "status": "success"}

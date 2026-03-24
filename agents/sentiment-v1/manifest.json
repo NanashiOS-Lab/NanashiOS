@@ -1,12 +1,12 @@
 {
   "copyright": "© 2026 NanashiOS-Lab. Tous droits réservés – Nom, logo, slogan protégés",
-"license": "BSL-1.1 - Commercial use restricted until 20 February 2030",
+  "license": "BSL-1.1",
   "id": "sentiment-v1",
   "name": "Sentiment Analysis Agent",
+  "name_fr": "Agent d'Analyse des Sentiments",
   "description": "Analyse le sentiment d’un texte (positif, neutre, négatif) avec VADER. Utile pour avis, tweets, commentaires, feedback.",
   "author": "NanashiOS-Lab",
   "version": "1.0.0",
-  "license": "license": "BSL-1.1",
   "license_note": "Business Source License 1.1 - Commercial use restricted until 20 February 2030",
   "inputs": [
     {
@@ -27,7 +27,13 @@
       "description": "Score de sentiment (-1 négatif à +1 positif)"
     }
   ],
-  "dependencies": ["vaderSentiment>=3.3.0"],
+  "dependencies": [
+    "vaderSentiment>=3.3.0"
+  ],
   "price": "free",
-  "tags": ["nlp", "sentiment-analysis", "text-processing"]
+  "tags": [
+    "nlp",
+    "sentiment-analysis",
+    "text-processing"
+  ]
 }

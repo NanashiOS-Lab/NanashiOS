@@ -1,6 +1,7 @@
 {
   "id": "voice-clone-v1",
   "name": "Voice Clone Agent",
+  "name_fr": "Agent de Clonage de Voix",
   "description": "Clone une voix à partir d’un échantillon audio court. Utile pour agents vocaux personnalisés, doublage et accessibilité. Fonctionne localement.",
   "author": "NanashiOS-Lab",
   "version": "1.0.0",
@@ -10,7 +11,11 @@
     {
       "name": "audio_sample",
       "type": "audio",
-      "formats": ["wav", "mp3", "ogg"],
+      "formats": [
+        "wav",
+        "mp3",
+        "ogg"
+      ],
       "description": "Échantillon audio de la voix à cloner (5-30 secondes)"
     },
     {
@@ -32,7 +37,17 @@
       "description": "Score de similarité (0-1)"
     }
   ],
-  "dependencies": ["torchaudio>=2.0.0", "speechbrain>=0.5.0", "librosa>=0.10.0"],
+  "dependencies": [
+    "torchaudio>=2.0.0",
+    "speechbrain>=0.5.0",
+    "librosa>=0.10.0"
+  ],
   "price": "free",
-  "tags": ["audio", "voice-clone", "synthesis", "privacy", "multimodal"]
+  "tags": [
+    "audio",
+    "voice-clone",
+    "synthesis",
+    "privacy",
+    "multimodal"
+  ]
 }

@@ -1,6 +1,7 @@
 {
   "id": "traduction-v1",
   "name": "Translation Agent",
+  "name_fr": "Agent de Traduction",
   "description": "Traduit un texte dans plusieurs langues (offline avec modèles légers). Souveraineté : pas d’envoi à un cloud.",
   "author": "NanashiOS-Lab",
   "version": "1.0.0",
@@ -26,7 +27,16 @@
       "description": "Texte traduit"
     }
   ],
-  "dependencies": ["transformers>=4.20.0", "torch>=2.0.0"],
+  "dependencies": [
+    "transformers>=4.20.0",
+    "torch>=2.0.0"
+  ],
   "price": "free",
-  "tags": ["nlp", "translation", "offline", "multilingual", "sovereign"]
+  "tags": [
+    "nlp",
+    "translation",
+    "offline",
+    "multilingual",
+    "sovereign"
+  ]
 }

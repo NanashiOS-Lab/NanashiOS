@@ -24,6 +24,40 @@ from core.ghosts import (
 )
 from core.link_pro import link_pro
 
+# Mots-clés pour router la requête vers le bon agent
+ROUTING_TABLE = {
+    resume_texte:      ["résumé", "résume", "résumer", "summarize", "summary", "synthèse"],
+    sentiment:         ["sentiment", "émotion", "positif", "négatif", "ressenti", "feeling"],
+    traduction:        ["traduis", "traduire", "traduction", "translate", "translation"],
+    keyword_extractor: ["mots-clés", "keywords", "mots clés", "extraire mots", "thèmes"],
+    ethical_reasoner:  ["éthique", "moral", "éthiquement", "est-ce bien", "permis", "légal"],
+    fake_news_detector:["fake news", "faux", "vérifier", "rumeur", "désinformation"],
+    human_auth:        ["humain", "bot", "authenticité", "vérifie si humain"],
+    blur_detection:    ["flou", "blur", "qualité image", "netteté"],
+    image_caption:     ["décris", "image", "photo", "caption", "description image"],
+    face_blur:         ["flouter visage", "anonymiser", "visage", "face blur"],
+    image_deepfake:    ["deepfake image", "fausse image", "image authentique"],
+    real_time_ocr:     ["ocr", "texte image", "lire image", "extraire texte"],
+    voice_clone:       ["voix", "cloner voix", "voice clone", "synthèse vocale"],
+    audio_deepfake:    ["deepfake audio", "fausse voix", "audio synthétique"],
+    local_malware:     ["malware", "virus", "scan", "sécurité fichier"],
+    biometric_auth:    ["biométrie", "empreinte", "authentification biométrique"],
+    contract_auditor:  ["contrat", "smart contract", "audit contrat", "solidity"],
+    patent_drafter:    ["brevet", "patent", "propriété intellectuelle", "invention"],
+    self_healing:      ["répare", "auto-réparation", "bug système", "self-healing"],
+    coordinateur:      ["coordonne", "coordination", "multi-agents", "plusieurs agents"],
+    pulse_logic:       ["logique", "raisonnement", "déduis", "conclusion"],
+    knowledge_graph:   ["graphe", "connaissances", "knowledge", "relations"],
+    collaborative:     ["apprentissage collaboratif", "partage connaissances", "fédéré"],
+    code_writer:       ["code", "programme", "écris", "python", "javascript", "rust", "fonction"],
+    pdf_extracteur:    ["pdf", "document", "extraire pdf", "lire pdf"],
+    topology_analyzer: ["topologie", "réseau", "graphe réseau", "topology"],
+    semantic_search:   ["cherche", "recherche", "trouve", "search"],
+    data_visualizer:   ["visualise", "graphique", "chart", "données", "statistiques"],
+    auto_debugger:     ["debug", "erreur", "bug", "corrige", "fix"],
+}
+
+
 class WakaEngine:
     def __init__(self):
         self.name = "NanashiOS Core"
@@ -37,30 +71,47 @@ class WakaEngine:
         print(f"[{self.name}] Agent contradictoire Shadow : EN LIGNE")
         print(f"[{self.name}] 30 agents chargés avec hiérarchie")
 
+    def _route(self, user_input: str):
+        """Sélectionne l'agent le plus approprié selon la requête."""
+        text = user_input.lower()
+        best_agent = None
+        best_score = 0
+
+        for agent, keywords in ROUTING_TABLE.items():
+            score = sum(1 for kw in keywords if kw in text)
+            if score > best_score:
+                best_score = score
+                best_agent = agent
+
+        return best_agent if best_agent else blinky
+
     def process_query(self, user_input: str):
-        """Traite une requête avec hiérarchie et vérification contradictoire"""
+        """Traite une requête avec routage, hiérarchie et vérification contradictoire."""
         # 1. Protection entrée
         secure_input = link_pro.usl_ingress(user_input)
 
-        # 2. Analyse par l'orchestrateur (Blinky)
-        print(f"[{self.name}] Transmission à l'orchestrateur...")
-        agent_decision = blinky.analyze_task(secure_input)
+        # 2. Routage vers l'agent approprié
+        agent = self._route(secure_input)
+        print(f"[{self.name}] Routage → {agent.name}")
 
-        # 3. Exécution par l'agent concerné (simulation pour l'instant)
-        raw_response = f"Réponse traitée par l'agent : {agent_decision}"
+        # 3. Exécution par l'agent sélectionné
+        try:
+            raw_response = agent.process(secure_input)
+        except Exception as e:
+            raw_response = blinky.analyze_task(secure_input)
 
         # 4. Vérification contradictoire par Shadow
-        critique = shadow.critique("Agent Principal", raw_response, secure_input)
-        
+        critique = shadow.critique(agent.name, str(raw_response), secure_input)
         if critique["status"] == "critique":
-            print("Shadow a détecté des faiblesses → ajustement en cours")
-            raw_response += " (ajusté après critique)"
+            print(f"[Shadow] Faiblesses détectées → ajustement")
+            raw_response = str(raw_response) + " (vérifié et ajusté par Shadow)"
 
         # 5. Protection finale de sortie
-        safe_response = link_pro.edl_egress(raw_response)
+        safe_response = link_pro.edl_egress(str(raw_response))
 
         return {
             "status": "success",
+            "agent": agent.name,
             "response": safe_response,
             "critique_status": critique["status"]
         }

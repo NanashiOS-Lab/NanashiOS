@@ -5,10 +5,12 @@ import os
 
 class Settings:
     PROJECT_NAME = "MAWS v1.1"
-    PROJECT_CODE = "Nanashi" 
+    PROJECT_CODE = "Nanashi"
     ANONYMITY_LEVEL = "High"
-    BLOCKCHAIN_AUDIT = True 
+    BLOCKCHAIN_AUDIT = True
     SIMILARITY_THRESHOLD = 0.85
     OPENAI_API_KEY = os.getenv("OPENAI_API_KEY", "")
+    LANGUAGE = os.getenv("NANASHI_LANG", "fr")
+    SUPPORTED_LANGUAGES = ["fr", "en"]
 
 settings = Settings()

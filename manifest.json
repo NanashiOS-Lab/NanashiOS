@@ -1,32 +1,35 @@
-Licensed under Business Source License 1.1.
-Commercial use (SaaS, revente, intégration cloud) interdit jusqu’au 20 février 2030 sans licence payante de NanashiOS-Lab.
-Contact : [nanashia256@gmail.com]
 {
   "version": "1.0.0",
   "description": "Registre officiel des agents disponibles pour NanashiOS",
   "last_updated": "2026-02-20",
+  "license": "BSL-1.1",
+  "license_note": "Business Source License 1.1 - Commercial use restricted until 20 February 2030",
   "agents": [
     {
       "id": "agent-1-blur-detection",
       "name": "Blur Detection Agent",
+      "name_fr": "Agent de Détection de Flou",
       "path": "agents/agent-1-blur-detection-v1/manifest.json",
       "tags": ["image", "quality-check", "preprocessing"]
     },
     {
       "id": "agent-2-real-time-ocr",
       "name": "Real-time OCR Agent",
+      "name_fr": "Agent OCR en Temps Réel",
       "path": "agents/agent-2-real-time-ocr/manifest.json",
       "tags": ["ocr", "text-extraction", "multimodal"]
     },
     {
       "id": "sentiment-v1",
       "name": "Sentiment Analysis Agent",
+      "name_fr": "Agent d'Analyse des Sentiments",
       "path": "agents/sentiment-v1/manifest.json",
       "tags": ["nlp", "sentiment", "text-analysis"]
     },
     {
       "id": "prompt-optimizer-v1",
       "name": "Prompt Optimizer Agent",
+      "name_fr": "Agent Optimiseur de Prompts",
       "path": "agents/prompt-optimizer-v1/manifest.json",
       "tags": ["prompt-engineering", "image-generation", "ai-art", "creative"]
     }

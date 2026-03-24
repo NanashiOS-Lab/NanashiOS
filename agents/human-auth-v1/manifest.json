@@ -1,12 +1,12 @@
 {
   "copyright": "© 2026 NanashiOS-Lab. Tous droits réservés – Nom, logo, slogan protégés",
-"license": "BSL-1.1 - Commercial use restricted until 20 February 2030",
+  "license": "BSL-1.1",
   "id": "human-auth-v1",
   "name": "Human Authenticity Agent",
+  "name_fr": "Agent d'Authenticité Humaine",
   "description": "Vérifie si un texte est écrit par un humain ou généré par IA (score 0-1). Utile pour anti-deepfake, vérification emails, contenus authentiques. Local et sovereign.",
   "author": "NanashiOS-Lab",
   "version": "1.0.0",
-  "license": "license": "BSL-1.1",
   "license_note": "Business Source License 1.1 - Commercial use restricted until 20 February 2030",
   "inputs": [
     {
@@ -27,7 +27,16 @@
       "description": "Score d’authenticité humaine (0 = IA → 1 = humain)"
     }
   ],
-  "dependencies": ["transformers>=4.20.0", "torch>=2.0.0"],
+  "dependencies": [
+    "transformers>=4.20.0",
+    "torch>=2.0.0"
+  ],
   "price": "free",
-  "tags": ["authenticity", "anti-ai", "privacy", "text-detection", "deepfake"]
+  "tags": [
+    "authenticity",
+    "anti-ai",
+    "privacy",
+    "text-detection",
+    "deepfake"
+  ]
 }

@@ -2,18 +2,21 @@
   "copyright": "© 2026 NanashiOS-Lab. Tous droits réservés. Nom 'NanashiOS', logo 👻🛡️ et slogan protégés.",
   "license": "BSL-1.1",
   "license_note": "Business Source License 1.1 - Commercial use restricted until 20 February 2030. Contact: nanashia256@gmail.com",
-  
   "id": "voice-clone-v1",
   "name": "Voice Clone Agent",
+  "name_fr": "Agent de Clonage de Voix",
   "description": "Clone une voix à partir d’un échantillon audio court et synthétise du texte avec SpeechBrain (speaker embedding + TTS). Utile pour agents vocaux personnalisés et accessibilité.",
   "author": "NanashiOS-Lab",
   "version": "1.0.0",
-  
   "inputs": [
     {
       "name": "audio_sample",
       "type": "audio",
-      "formats": ["wav", "mp3", "ogg"],
+      "formats": [
+        "wav",
+        "mp3",
+        "ogg"
+      ],
       "description": "Échantillon audio de la voix à cloner (5-30 secondes)"
     },
     {
@@ -40,7 +43,17 @@
       "description": "Score de similarité vocale (0-1)"
     }
   ],
-  "dependencies": ["speechbrain>=0.5.0", "torchaudio>=2.0.0", "torch>=2.0.0"],
+  "dependencies": [
+    "speechbrain>=0.5.0",
+    "torchaudio>=2.0.0",
+    "torch>=2.0.0"
+  ],
   "price": "free",
-  "tags": ["audio", "voice-clone", "tts", "speaker-embedding", "privacy"]
+  "tags": [
+    "audio",
+    "voice-clone",
+    "tts",
+    "speaker-embedding",
+    "privacy"
+  ]
 }

@@ -1,0 +1,52 @@
+{
+  "id": "image-deepfake-detector-v1",
+  "name": "Image Deepfake Detector Agent",
+  "name_fr": "Agent Détecteur de Deepfake d'Images",
+  "description": "Détecte si une image est un deepfake via un modèle local. Utile pour agents de vérification de contenu visuel.",
+  "author": "NanashiOS-Lab",
+  "version": "1.0.0",
+  "license": "BSL-1.1",
+  "license_note": "Business Source License 1.1 - Commercial use restricted until 20 February 2030",
+  "inputs": [
+    {
+      "name": "image",
+      "type": "image",
+      "formats": [
+        "png",
+        "jpg",
+        "jpeg"
+      ],
+      "description": "Image à analyser"
+    }
+  ],
+  "outputs": [
+    {
+      "name": "is_deepfake",
+      "type": "bool",
+      "description": "True si l'image est un deepfake"
+    },
+    {
+      "name": "confidence",
+      "type": "float",
+      "description": "Score de confiance (0-1)"
+    },
+    {
+      "name": "analysis",
+      "type": "string",
+      "description": "Détails de l'analyse"
+    }
+  ],
+  "dependencies": [
+    "torch>=2.0.0",
+    "torchvision>=0.15.0",
+    "pillow>=9.0.0"
+  ],
+  "price": "free",
+  "tags": [
+    "deepfake",
+    "detection",
+    "image",
+    "security",
+    "vision"
+  ]
+}

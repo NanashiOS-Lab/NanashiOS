@@ -1,17 +1,22 @@
 {
   "copyright": "© 2026 NanashiOS-Lab. Tous droits réservés – Nom, logo, slogan protégés",
-"license": "BSL-1.1 - Commercial use restricted until 20 February 2030",
+  "license": "BSL-1.1",
   "id": "agent-1-blur-detection-v1",
   "name": "Blur Detection Agent",
+  "name_fr": "Agent de Détection de Flou",
   "description": "Détecte le flou sur une image et renvoie un score de netteté (0 à 1). Utile pour filtrer les photos avant traitement.",
   "author": "NanashiOS-Lab",
   "version": "1.0.0",
-  "license": "license": "BSL-1.1","license_note": "Business Source License 1.1 - Commercial use restricted until 20 February 2030",
+  "license_note": "Business Source License 1.1 - Commercial use restricted until 20 February 2030",
   "inputs": [
     {
       "name": "image",
       "type": "image",
-      "formats": ["png", "jpg", "jpeg"],
+      "formats": [
+        "png",
+        "jpg",
+        "jpeg"
+      ],
       "description": "Image à analyser"
     }
   ],
@@ -27,7 +32,13 @@
       "description": "True si l’image est considérée floue (seuil > 0.4)"
     }
   ],
-  "dependencies": ["opencv-python-headless>=4.5.0"],
+  "dependencies": [
+    "opencv-python-headless>=4.5.0"
+  ],
   "price": "free",
-  "tags": ["image", "preprocessing", "quality-check"]
+  "tags": [
+    "image",
+    "preprocessing",
+    "quality-check"
+  ]
 }

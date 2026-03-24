@@ -1,12 +1,12 @@
 {
   "copyright": "© 2026 NanashiOS-Lab. Tous droits réservés – Nom, logo, slogan protégés",
-"license": "BSL-1.1 - Commercial use restricted until 20 February 2030",
+  "license": "BSL-1.1",
   "id": "prompt-optimizer-v1",
   "name": "Prompt Optimizer Agent",
+  "name_fr": "Agent Optimiseur de Prompts",
   "description": "Optimise un prompt brut pour Midjourney, Stable Diffusion ou DALL-E (ajoute détails, style, qualité, poids, artistes). Utile pour génération d’images.",
   "author": "NanashiOS-Lab",
   "version": "1.0.0",
-  "license": "license": "BSL-1.1",
   "license_note": "Business Source License 1.1 - Commercial use restricted until 20 February 2030",
   "inputs": [
     {
@@ -22,7 +22,14 @@
       "description": "Prompt amélioré et détaillé"
     }
   ],
-  "dependencies": ["nltk>=3.7", "textblob>=0.17.1"],
+  "dependencies": [
+    "nltk>=3.7",
+    "textblob>=0.17.1"
+  ],
   "price": "free",
-  "tags": ["prompt-engineering", "image-generation", "ai-art"]
+  "tags": [
+    "prompt-engineering",
+    "image-generation",
+    "ai-art"
+  ]
 }

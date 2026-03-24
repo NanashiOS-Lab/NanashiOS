@@ -1,0 +1,40 @@
+{
+  "id": "sentiment-v1",
+  "name": "Sentiment Analysis Agent",
+  "name_fr": "Agent d'Analyse des Sentiments",
+  "description": "Analyse le sentiment (positif, négatif, neutre) d'un texte avec score de confiance.",
+  "author": "NanashiOS-Lab",
+  "version": "1.0.0",
+  "license": "BSL-1.1",
+  "license_note": "Business Source License 1.1 - Commercial use restricted until 20 February 2030",
+  "inputs": [
+    {
+      "name": "text",
+      "type": "string",
+      "description": "Texte à analyser"
+    }
+  ],
+  "outputs": [
+    {
+      "name": "sentiment",
+      "type": "string",
+      "description": "Sentiment détecté (positif / négatif / neutre)"
+    },
+    {
+      "name": "score",
+      "type": "float",
+      "description": "Score de confiance (0-1)"
+    }
+  ],
+  "dependencies": [
+    "transformers>=4.20.0",
+    "torch>=2.0.0"
+  ],
+  "price": "free",
+  "tags": [
+    "nlp",
+    "sentiment",
+    "text-analysis",
+    "emotion"
+  ]
+}
