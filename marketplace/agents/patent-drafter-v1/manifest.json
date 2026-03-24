@@ -1,6 +1,7 @@
 {
   "id": "patent-drafter-v1",
   "name": "Patent Drafter Agent",
+  "name_fr": "Agent Rédacteur de Brevets",
   "description": "Rédige ou vérifie des descriptions de brevets conformes aux exigences OEB (EPO) et INPI (France). Vérifie brevetabilité, nouveauté et activité inventive.",
   "author": "NanashiOS-Lab",
   "version": "1.0.0",
@@ -31,7 +32,17 @@
       "description": "Score de brevetabilité estimé (0-1)"
     }
   ],
-  "dependencies": ["nltk>=3.7", "textblob>=0.17.1"],
+  "dependencies": [
+    "nltk>=3.7",
+    "textblob>=0.17.1"
+  ],
   "price": "free",
-  "tags": ["legal", "patent", "oeb", "inpi", "ip", "brevet"]
+  "tags": [
+    "legal",
+    "patent",
+    "oeb",
+    "inpi",
+    "ip",
+    "brevet"
+  ]
 }

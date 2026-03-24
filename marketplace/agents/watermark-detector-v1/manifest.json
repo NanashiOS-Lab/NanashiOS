@@ -1,6 +1,7 @@
 {
   "id": "watermark-detector-v1",
   "name": "Watermark Detector Agent",
+  "name_fr": "Agent Détecteur de Filigranes",
   "description": "Détecte les watermarks C2PA, Adobe Content Credentials et autres signatures numériques dans les images et vidéos. Utile pour vérifier l’authenticité des contenus.",
   "author": "NanashiOS-Lab",
   "version": "1.0.0",
@@ -10,7 +11,12 @@
     {
       "name": "media",
       "type": "image or video",
-      "formats": ["png", "jpg", "jpeg", "mp4"],
+      "formats": [
+        "png",
+        "jpg",
+        "jpeg",
+        "mp4"
+      ],
       "description": "Image ou vidéo à analyser"
     }
   ],
@@ -31,7 +37,15 @@
       "description": "Détails du watermark (C2PA, Adobe, etc.)"
     }
   ],
-  "dependencies": ["opencv-python-headless>=4.5.0"],
+  "dependencies": [
+    "opencv-python-headless>=4.5.0"
+  ],
   "price": "free",
-  "tags": ["watermark", "c2pa", "authenticity", "anti-deepfake", "verification"]
+  "tags": [
+    "watermark",
+    "c2pa",
+    "authenticity",
+    "anti-deepfake",
+    "verification"
+  ]
 }

@@ -1,6 +1,7 @@
 {
   "id": "image-caption-v1",
   "name": "Image Caption Agent",
+  "name_fr": "Agent de Description d'Images",
   "description": "Génère une description textuelle détaillée d’une image (local avec BLIP ou équivalent). Utile pour agents qui décrivent visuels sans cloud.",
   "author": "NanashiOS-Lab",
   "version": "1.0.0",
@@ -10,7 +11,11 @@
     {
       "name": "image",
       "type": "image",
-      "formats": ["png", "jpg", "jpeg"],
+      "formats": [
+        "png",
+        "jpg",
+        "jpeg"
+      ],
       "description": "Image à décrire"
     }
   ],
@@ -26,7 +31,17 @@
       "description": "Mots-clés principaux extraits"
     }
   ],
-  "dependencies": ["transformers>=4.20.0", "torch>=2.0.0", "pillow>=9.0.0"],
+  "dependencies": [
+    "transformers>=4.20.0",
+    "torch>=2.0.0",
+    "pillow>=9.0.0"
+  ],
   "price": "free",
-  "tags": ["image", "captioning", "vision", "multimodal", "description"]
+  "tags": [
+    "image",
+    "captioning",
+    "vision",
+    "multimodal",
+    "description"
+  ]
 }

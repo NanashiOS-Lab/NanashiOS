@@ -17,203 +17,232 @@
       "name": "Blur Detection Agent",
       "category": "vision",
       "path": "agents/blur-detection-v1/manifest.json",
-      "status": "active"
+      "status": "active",
+      "name_fr": "Agent de Détection de Flou"
     },
     {
       "id": "real-time-ocr-v1",
       "name": "Real-time OCR Agent",
       "category": "vision",
       "path": "agents/real-time-ocr-v1/manifest.json",
-      "status": "active"
+      "status": "active",
+      "name_fr": "Agent OCR en Temps Réel"
     },
     {
       "id": "biometric-local-auth-v1",
       "name": "Biometric Local Auth Agent",
       "category": "security",
       "path": "agents/biometric-local-auth-v1/manifest.json",
-      "status": "active"
+      "status": "active",
+      "name_fr": "Agent d'Authentification Biométrique Locale"
     },
     {
       "id": "code-writer-v1",
       "name": "Code Writer Agent",
       "category": "tools",
       "path": "agents/code-writer-v1/manifest.json",
-      "status": "active"
+      "status": "active",
+      "name_fr": "Agent Rédacteur de Code"
     },
     {
       "id": "collaborative-learning-v1",
       "name": "Collaborative Learning Agent",
       "category": "advanced",
       "path": "agents/collaborative-learning-v1/manifest.json",
-      "status": "active"
+      "status": "active",
+      "name_fr": "Agent d'Apprentissage Collaboratif"
     },
     {
       "id": "contract-auditor-v1",
       "name": "Contract Auditor Agent",
       "category": "security",
       "path": "agents/contract-auditor-v1/manifest.json",
-      "status": "active"
+      "status": "active",
+      "name_fr": "Agent Auditeur de Contrats"
     },
     {
       "id": "coordinateur-multi-agents-v1",
       "name": "Coordinateur Multi-Agents",
       "category": "coordination",
       "path": "agents/coordinateur-multi-agents-v1/manifest.json",
-      "status": "active"
+      "status": "active",
+      "name_fr": "Coordinateur Multi-Agents"
     },
     {
       "id": "détection-émotion-v1",
       "name": "Emotion Detection Agent",
       "category": "text",
       "path": "agents/détection-émotion-v1/manifest.json",
-      "status": "active"
+      "status": "active",
+      "name_fr": "Agent de Détection d'Émotions"
     },
     {
       "id": "ethical-reasoner-v1",
       "name": "Ethical Reasoner Agent",
       "category": "text",
       "path": "agents/ethical-reasoner-v1/manifest.json",
-      "status": "active"
+      "status": "active",
+      "name_fr": "Agent de Raisonnement Éthique"
     },
     {
       "id": "face-blur-v1",
       "name": "Face Blur Agent",
       "category": "vision",
       "path": "agents/face-blur-v1/manifest.json",
-      "status": "active"
+      "status": "active",
+      "name_fr": "Agent de Floutage de Visages"
     },
     {
       "id": "fake-news-detector-v1",
       "name": "Fake News Detector Agent",
       "category": "text",
       "path": "agents/fake-news-detector-v1/manifest.json",
-      "status": "active"
+      "status": "active",
+      "name_fr": "Agent Détecteur de Fausses Nouvelles"
     },
     {
       "id": "human-auth-v1",
       "name": "Human Authenticity Agent",
       "category": "security",
       "path": "agents/human-auth-v1/manifest.json",
-      "status": "active"
+      "status": "active",
+      "name_fr": "Agent d'Authenticité Humaine"
     },
     {
       "id": "image-caption-v1",
       "name": "Image Caption Agent",
       "category": "vision",
       "path": "agents/image-caption-v1/manifest.json",
-      "status": "active"
+      "status": "active",
+      "name_fr": "Agent de Description d'Images"
     },
     {
       "id": "image-deepfake-detector-v1",
       "name": "Image Deepfake Detector Agent",
       "category": "vision",
       "path": "agents/image-deepfake-detector-v1/manifest.json",
-      "status": "active"
+      "status": "active",
+      "name_fr": "Agent Détecteur de Deepfake d'Images"
     },
     {
       "id": "keyword-extractor-v1",
       "name": "Keyword Extractor Agent",
       "category": "text",
       "path": "agents/keyword-extractor-v1/manifest.json",
-      "status": "active"
+      "status": "active",
+      "name_fr": "Agent Extracteur de Mots-Clés"
     },
     {
       "id": "local-malware-detector-v1",
       "name": "Local Malware Detector Agent",
       "category": "security",
       "path": "agents/local-malware-detector-v1/manifest.json",
-      "status": "active"
+      "status": "active",
+      "name_fr": "Agent Détecteur de Malwares Local"
     },
     {
       "id": "patent-drafter-v1",
       "name": "Patent Drafter Agent",
       "category": "tools",
       "path": "agents/patent-drafter-v1/manifest.json",
-      "status": "active"
+      "status": "active",
+      "name_fr": "Agent Rédacteur de Brevets"
     },
     {
       "id": "pdf-extracteur-v1",
       "name": "PDF Extractor Agent",
       "category": "tools",
       "path": "agents/pdf-extracteur-v1/manifest.json",
-      "status": "active"
+      "status": "active",
+      "name_fr": "Agent Extracteur PDF"
     },
     {
       "id": "personal-knowledge-graph-v1",
       "name": "Personal Knowledge Graph Agent",
       "category": "advanced",
       "path": "agents/personal-knowledge-graph-v1/manifest.json",
-      "status": "active"
+      "status": "active",
+      "name_fr": "Agent de Graphe de Connaissances Personnel"
     },
     {
       "id": "prompt-optimizer-v1",
       "name": "Prompt Optimizer Agent",
       "category": "text",
       "path": "agents/prompt-optimizer-v1/manifest.json",
-      "status": "active"
+      "status": "active",
+      "name_fr": "Agent Optimiseur de Prompts"
     },
     {
       "id": "pulse-logic-v1",
       "name": "Pulse Logic Agent",
       "category": "advanced",
       "path": "agents/pulse-logic-v1/manifest.json",
-      "status": "active"
+      "status": "active",
+      "name_fr": "Agent Pulse Logic"
     },
     {
       "id": "real-time-ocr-v1",
       "name": "Real-time OCR Agent",
       "category": "vision",
       "path": "agents/real-time-ocr-v1/manifest.json",
-      "status": "active"
+      "status": "active",
+      "name_fr": "Agent OCR en Temps Réel"
     },
     {
       "id": "self-healing-v1",
       "name": "Self Healing Agent",
       "category": "advanced",
       "path": "agents/self-healing-v1/manifest.json",
-      "status": "active"
+      "status": "active",
+      "name_fr": "Agent d'Auto-Réparation"
     },
     {
       "id": "semantic-search-v1",
       "name": "Semantic Search Agent",
       "category": "text",
       "path": "agents/semantic-search-v1/manifest.json",
-      "status": "active"
+      "status": "active",
+      "name_fr": "Agent de Recherche Sémantique"
     },
     {
       "id": "sentiment-v1",
       "name": "Sentiment Analysis Agent",
       "category": "text",
       "path": "agents/sentiment-v1/manifest.json",
-      "status": "active"
+      "status": "active",
+      "name_fr": "Agent d'Analyse des Sentiments"
     },
     {
       "id": "topology-analyzer-v1",
       "name": "Topology Analyzer Agent",
       "category": "tools",
       "path": "agents/topology-analyzer-v1/manifest.json",
-      "status": "active"
+      "status": "active",
+      "name_fr": "Agent Analyseur de Topologie"
     },
     {
       "id": "traduction-v1",
       "name": "Traduction Agent",
       "category": "text",
       "path": "agents/traduction-v1/manifest.json",
-      "status": "active"
+      "status": "active",
+      "name_fr": "Agent de Traduction"
     },
     {
       "id": "voice-clone-v1",
       "name": "Voice Clone Agent",
       "category": "audio",
       "path": "agents/voice-clone-v1/manifest.json",
-      "status": "active"
+      "status": "active",
+      "name_fr": "Agent de Clonage de Voix"
     },
     {
       "id": "audio-deepfake-detector-v1",
       "name": "Audio Deepfake Detector Agent",
       "category": "audio",
       "path": "agents/audio-deepfake-detector-v1/manifest.json",
-      "status": "active"
+      "status": "active",
+      "name_fr": "Agent Détecteur de Deepfake Audio"
     }
   ]
 }

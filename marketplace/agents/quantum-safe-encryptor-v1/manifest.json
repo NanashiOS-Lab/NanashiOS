@@ -1,6 +1,7 @@
 {
   "id": "quantum-safe-encryptor-v1",
   "name": "Quantum Safe Encryptor Agent",
+  "name_fr": "Agent Chiffreur Quantique Sécurisé",
   "description": "Chiffrement post-quantique local (résistant aux ordinateurs quantiques). Utile pour protéger les données contre les futures attaques quantiques.",
   "author": "NanashiOS-Lab",
   "version": "1.0.0",
@@ -25,7 +26,15 @@
       "description": "Clé utilisée pour le chiffrement"
     }
   ],
-  "dependencies": ["pqcrypto>=0.1.0"],
+  "dependencies": [
+    "pqcrypto>=0.1.0"
+  ],
   "price": "free",
-  "tags": ["quantum-safe", "encryption", "post-quantum", "security", "privacy"]
+  "tags": [
+    "quantum-safe",
+    "encryption",
+    "post-quantum",
+    "security",
+    "privacy"
+  ]
 }

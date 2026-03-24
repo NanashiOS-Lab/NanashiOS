@@ -1,6 +1,7 @@
 {
   "id": "collaborative-learning-v1",
   "name": "Collaborative Learning Agent",
+  "name_fr": "Agent d'Apprentissage Collaboratif",
   "description": "Permet à plusieurs agents d’apprendre ensemble, partager des connaissances localement et s’améliorer de manière souveraine (style apprentissage fédéré local).",
   "author": "NanashiOS-Lab",
   "version": "1.0.0",
@@ -31,7 +32,14 @@
       "description": "Nouvelles connaissances à partager"
     }
   ],
-  "dependencies": ["networkx>=3.0.0"],
+  "dependencies": [
+    "networkx>=3.0.0"
+  ],
   "price": "free",
-  "tags": ["collaborative-learning", "federated-learning", "multi-agent", "sovereign"]
+  "tags": [
+    "collaborative-learning",
+    "federated-learning",
+    "multi-agent",
+    "sovereign"
+  ]
 }

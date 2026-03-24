@@ -1,6 +1,7 @@
 {
   "id": "détection-émotion-v1",
   "name": "Emotion Detection Agent",
+  "name_fr": "Agent de Détection d'Émotions",
   "description": "Détecte les émotions dans un texte ou un audio (joie, colère, tristesse, peur, surprise). Utile pour agents empathiques ou analyse de feedback.",
   "author": "NanashiOS-Lab",
   "version": "1.0.0",
@@ -10,7 +11,11 @@
     {
       "name": "input",
       "type": "string or audio",
-      "formats": ["text", "wav", "mp3"],
+      "formats": [
+        "text",
+        "wav",
+        "mp3"
+      ],
       "description": "Texte ou fichier audio à analyser"
     }
   ],
@@ -26,7 +31,15 @@
       "description": "Score de confiance (0-1)"
     }
   ],
-  "dependencies": ["textblob>=0.17.1", "librosa>=0.10.0"],
+  "dependencies": [
+    "textblob>=0.17.1",
+    "librosa>=0.10.0"
+  ],
   "price": "free",
-  "tags": ["nlp", "emotion-detection", "audio-processing", "multimodal"]
+  "tags": [
+    "nlp",
+    "emotion-detection",
+    "audio-processing",
+    "multimodal"
+  ]
 }

@@ -1,6 +1,7 @@
 {
   "id": "prompt-optimizer-v1",
   "name": "Prompt Optimizer Agent",
+  "name_fr": "Agent Optimiseur de Prompts",
   "description": "Optimise un prompt brut pour Midjourney, Stable Diffusion ou DALL-E (ajoute détails, style, qualité, poids, artistes). Utile pour génération d’images.",
   "author": "NanashiOS-Lab",
   "version": "1.0.0",
@@ -31,7 +32,15 @@
       "description": "Score d’amélioration estimé (0-1)"
     }
   ],
-  "dependencies": ["nltk>=3.7", "textblob>=0.17.1"],
+  "dependencies": [
+    "nltk>=3.7",
+    "textblob>=0.17.1"
+  ],
   "price": "free",
-  "tags": ["prompt-engineering", "image-generation", "ai-art", "creative"]
+  "tags": [
+    "prompt-engineering",
+    "image-generation",
+    "ai-art",
+    "creative"
+  ]
 }
