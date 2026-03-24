@@ -20,7 +20,10 @@ from core.ghosts import (
     local_malware, biometric_auth, contract_auditor, patent_drafter, self_healing,
     coordinateur, pulse_logic, knowledge_graph, collaborative,
     code_writer, pdf_extracteur, topology_analyzer, semantic_search,
-    data_visualizer, auto_debugger
+    data_visualizer, auto_debugger,
+    detection_emotion, behavioral_auth, dream_analyzer, energy_optimizer,
+    prompt_optimizer, quantum_encryptor, self_learning, topology_analyzer_v1,
+    watermark_detector, real_time_ocr_v1, blur_detection_v1
 )
 from core.link_pro import link_pro
 
@@ -55,6 +58,17 @@ ROUTING_TABLE = {
     semantic_search:   ["cherche", "recherche", "trouve", "search"],
     data_visualizer:   ["visualise", "graphique", "chart", "données", "statistiques"],
     auto_debugger:     ["debug", "erreur", "bug", "corrige", "fix"],
+    detection_emotion: ["émotion", "détecte émotion", "colère", "joie", "tristesse", "peur"],
+    behavioral_auth:   ["comportement", "typing", "frappe clavier", "authentification comportementale"],
+    dream_analyzer:    ["rêve", "songe", "cauchemar", "dream", "analyse rêve"],
+    energy_optimizer:  ["énergie", "consommation", "watt", "optimise énergie", "puissance"],
+    prompt_optimizer:  ["optimise prompt", "améliore prompt", "reformule", "prompt engineering"],
+    quantum_encryptor: ["quantique", "chiffrement", "encrypt", "post-quantique", "cryptographie"],
+    self_learning:     ["apprends", "mémorise", "observation", "self-learning", "apprentissage auto"],
+    topology_analyzer_v1: ["topologie réseau", "analyse réseau v1", "nœuds", "graphe connexe"],
+    watermark_detector:["watermark", "filigrane", "marque image", "détecte watermark"],
+    real_time_ocr_v1:  ["ocr v1", "lecture image v1", "extraire texte v1"],
+    blur_detection_v1: ["flou v1", "blur v1", "qualité image v1"],
 }
 
 
@@ -69,7 +83,7 @@ class WakaEngine:
 
         print(f"[{self.name}] Protection de sortie : ACTIVÉE")
         print(f"[{self.name}] Agent contradictoire Shadow : EN LIGNE")
-        print(f"[{self.name}] 30 agents chargés avec hiérarchie")
+        print(f"[{self.name}] 41 agents chargés avec hiérarchie")
 
     def _route(self, user_input: str):
         """Sélectionne l'agent le plus approprié selon la requête."""

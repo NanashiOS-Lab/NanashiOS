@@ -84,19 +84,19 @@ class Blinky(GhostAgent):
 class Inky(GhostAgent):
     """Chef du Domaine Développement"""
     def __init__(self):
-        super().__init__("Inky", "Lead Developer", clearance_level=4, supervisor=Blinky())
+        super().__init__("Inky", "Lead Developer", clearance_level=4, supervisor=None)
 
 
 class Pinky(GhostAgent):
     """Chef du Domaine Recherche"""
     def __init__(self):
-        super().__init__("Pinky", "Lead Researcher", clearance_level=4, supervisor=Blinky())
+        super().__init__("Pinky", "Lead Researcher", clearance_level=4, supervisor=None)
 
 
 class Shadow(GhostAgent):
     """Agent Contradictoire - Devil's Advocate"""
     def __init__(self):
-        super().__init__("Shadow", "Critique & Vérification", clearance_level=4, supervisor=Blinky())
+        super().__init__("Shadow", "Critique & Vérification", clearance_level=4, supervisor=None)
 
     def critique(self, agent_name: str, result: str, user_query: str):
         self.log(f"Critique du résultat de {agent_name}")
@@ -355,6 +355,100 @@ class AutoDebugger(GhostAgent):
         self.log("Débogage automatique")
         return self._delegate("self-healing-v1", {"error_log": str(error_log)})
 
+# --- Agents Orphelins Intégrés ---
+class DetectionEmotion(GhostAgent):
+    def __init__(self):
+        super().__init__("DetectionEmotion", "Emotion Detection", 2, pinky)
+
+    def process(self, text):
+        self.log("Détection émotion")
+        return self._delegate("détection-émotion-v1", {"text": text})
+
+class BehavioralAuth(GhostAgent):
+    def __init__(self):
+        super().__init__("BehavioralAuth", "Behavioral Authentication", 4, inky)
+
+    def process(self, data):
+        self.log("Authentification comportementale")
+        behavior = data if isinstance(data, dict) else {}
+        return self._delegate("behavioral-auth-v1", {"behavior_data": behavior})
+
+class DreamAnalyzer(GhostAgent):
+    def __init__(self):
+        super().__init__("DreamAnalyzer", "Dream Analysis", 2, pinky)
+
+    def process(self, text):
+        self.log("Analyse de rêve")
+        return self._delegate("dream-analyzer-v1", {"dream_log": text})
+
+class EnergyOptimizer(GhostAgent):
+    def __init__(self):
+        super().__init__("EnergyOptimizer", "Energy Optimization", 3, inky)
+
+    def process(self, data):
+        self.log("Optimisation énergétique")
+        workload = data if isinstance(data, dict) else {}
+        return self._delegate("energy-optimizer-v1", {"workload": workload, "constraints": {}})
+
+class PromptOptimizer(GhostAgent):
+    def __init__(self):
+        super().__init__("PromptOptimizer", "Prompt Optimization", 3, pinky)
+
+    def process(self, prompt):
+        self.log("Optimisation de prompt")
+        return self._delegate("prompt-optimizer-v1", {"prompt": prompt})
+
+class QuantumSafeEncryptor(GhostAgent):
+    def __init__(self):
+        super().__init__("QuantumSafeEncryptor", "Post-Quantum Encryption", 5, inky)
+
+    def process(self, data):
+        self.log("Chiffrement post-quantique")
+        text = data if isinstance(data, str) else str(data)
+        return self._delegate("quantum-safe-encryptor-v1", {"action": "encrypt", "data": text})
+
+class SelfLearning(GhostAgent):
+    def __init__(self):
+        super().__init__("SelfLearning", "Self Learning", 4, blinky)
+
+    def process(self, data):
+        self.log("Apprentissage automatique")
+        obs = data if isinstance(data, str) else str(data)
+        return self._delegate("self-learning-v1", {"observation": obs, "feedback": ""})
+
+class TopologyAnalyzerV1(GhostAgent):
+    def __init__(self):
+        super().__init__("TopologyAnalyzerV1", "Topology Analysis v1", 4, inky)
+
+    def process(self, data):
+        self.log("Analyse topologie v1")
+        return self._delegate("topology-analyzer-v1", {"data": data if isinstance(data, dict) else {}})
+
+class WatermarkDetector(GhostAgent):
+    def __init__(self):
+        super().__init__("WatermarkDetector", "Watermark Detection", 3, inky)
+
+    def process(self, image_path):
+        self.log(f"Détection watermark : {image_path}")
+        return self._delegate("watermark-detector-v1", {"image": image_path})
+
+class RealTimeOCRV1(GhostAgent):
+    def __init__(self):
+        super().__init__("RealTimeOCRV1", "OCR v1", 3, pinky)
+
+    def process(self, image_path):
+        self.log(f"OCR v1 : {image_path}")
+        return self._delegate("real-time-ocr-v1", {"image": image_path})
+
+class BlurDetectionV1(GhostAgent):
+    def __init__(self):
+        super().__init__("BlurDetectionV1", "Blur Detection v1", 3, inky)
+
+    def process(self, image_path):
+        self.log(f"Détection flou v1 : {image_path}")
+        return self._delegate("agent-1-blur-detection-v1", {"image": image_path})
+
+
 # ====================== INSTANCES GLOBALES ======================
 
 # Instances de la hiérarchie (doivent être créées avant les 30 agents)
@@ -362,6 +456,11 @@ blinky = Blinky()
 inky = Inky()
 pinky = Pinky()
 shadow = Shadow()
+
+# Liaison des superviseurs vers la même instance blinky
+inky.supervisor = blinky
+pinky.supervisor = blinky
+shadow.supervisor = blinky
 
 # Instances des 30 agents
 resume_texte = ResumeTexte()
@@ -398,3 +497,15 @@ topology_analyzer = TopologyAnalyzer()
 semantic_search = SemanticSearch()
 data_visualizer = DataVisualizer()
 auto_debugger = AutoDebugger()
+
+detection_emotion = DetectionEmotion()
+behavioral_auth = BehavioralAuth()
+dream_analyzer = DreamAnalyzer()
+energy_optimizer = EnergyOptimizer()
+prompt_optimizer = PromptOptimizer()
+quantum_encryptor = QuantumSafeEncryptor()
+self_learning = SelfLearning()
+topology_analyzer_v1 = TopologyAnalyzerV1()
+watermark_detector = WatermarkDetector()
+real_time_ocr_v1 = RealTimeOCRV1()
+blur_detection_v1 = BlurDetectionV1()
