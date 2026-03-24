@@ -1,12 +1,12 @@
 {
   "copyright": "© 2026 NanashiOS-Lab. Tous droits réservés – Nom, logo, slogan protégés",
-"license": "BSL-1.1 - Commercial use restricted until 20 February 2030",
+  "license": "BSL-1.1",
   "id": "self-healing-agent-v1",
   "name": "Self Healing Agent",
+  "name_fr": "Agent d'Auto-Réparation",
   "description": "Détecte ses propres erreurs, bugs ou dysfonctionnements et tente de les corriger automatiquement. Vrai agent autonome et résilient.",
   "author": "NanashiOS-Lab",
   "version": "1.0.0",
-  "license": "BSL-1.1",
   "license_note": "Business Source License 1.1 - Commercial use restricted until 20 February 2030",
   "inputs": [
     {
@@ -38,7 +38,16 @@
       "description": "Nouvel état après réparation"
     }
   ],
-  "dependencies": ["astor>=0.8.0", "traceback2>=1.4.0"],
+  "dependencies": [
+    "astor>=0.8.0",
+    "traceback2>=1.4.0"
+  ],
   "price": "free",
-  "tags": ["self-healing", "autonomy", "resilience", "debug", "agent-core"]
+  "tags": [
+    "self-healing",
+    "autonomy",
+    "resilience",
+    "debug",
+    "agent-core"
+  ]
 }

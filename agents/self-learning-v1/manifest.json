@@ -1,12 +1,12 @@
 {
   "copyright": "© 2026 NanashiOS-Lab. Tous droits réservés – Nom, logo, slogan protégés",
-"license": "BSL-1.1 - Commercial use restricted until 20 February 2030",
+  "license": "BSL-1.1",
   "id": "self-learning-v1",
   "name": "Self Learning Agent",
+  "name_fr": "Agent d'Auto-Apprentissage",
   "description": "Agent d’apprentissage autonome. Apprend de nouvelles tâches à partir d’exemples, mémorise les préférences de l’utilisateur localement, s’améliore avec le temps sans aucun envoi de données.",
   "author": "NanashiOS-Lab",
   "version": "1.0.0",
-  "license": "BSL-1.1",
   "license_note": "Business Source License 1.1 - Commercial use restricted until 20 February 2030",
   "inputs": [
     {
@@ -33,7 +33,17 @@
       "description": "Niveau de confiance dans l’apprentissage (0-1)"
     }
   ],
-  "dependencies": ["transformers>=4.20.0", "torch>=2.0.0"],
+  "dependencies": [
+    "transformers>=4.20.0",
+    "torch>=2.0.0"
+  ],
   "price": "free",
-  "tags": ["learning", "self-improvement", "adaptation", "memory", "autonomy", "sovereign"]
+  "tags": [
+    "learning",
+    "self-improvement",
+    "adaptation",
+    "memory",
+    "autonomy",
+    "sovereign"
+  ]
 }

@@ -1,19 +1,22 @@
 {
   "copyright": "© 2026 NanashiOS-Lab. Tous droits réservés – Nom, logo, slogan protégés",
-"license": "BSL-1.1 - Commercial use restricted until 20 February 2030",
+  "license": "BSL-1.1",
   "id": "agent-2-real-time-ocr",
   "name": "Real-time OCR Agent",
+  "name_fr": "Agent OCR en Temps Réel",
   "description": "Extrait le texte d’une image en temps réel (OCR avec Tesseract). Utile pour numérisation rapide.",
   "author": "NanashiOS-Lab",
   "version": "1.0.0",
-  "license": "BSL-1.1",
   "license_note": "Business Source License 1.1 - Commercial use restricted until 20 February 2030",
-
   "inputs": [
     {
       "name": "image",
       "type": "image",
-      "formats": ["png", "jpg", "jpeg"],
+      "formats": [
+        "png",
+        "jpg",
+        "jpeg"
+      ],
       "description": "Image contenant du texte"
     }
   ],
@@ -24,7 +27,14 @@
       "description": "Texte extrait"
     }
   ],
-  "dependencies": ["pytesseract", "pillow"],
+  "dependencies": [
+    "pytesseract",
+    "pillow"
+  ],
   "price": "free",
-  "tags": ["ocr", "text-extraction", "real-time"]
+  "tags": [
+    "ocr",
+    "text-extraction",
+    "real-time"
+  ]
 }

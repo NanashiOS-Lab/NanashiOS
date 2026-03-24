@@ -1,27 +1,15 @@
 def run(input_data):
-    """
-    Fake-News-Detector-v1 - NanashiOS
-    Détecte les fake news et désinformation dans un texte
-    """
-    text = input_data.get("text", "").lower()
-
-    # Simulation simple (à remplacer par un vrai modèle plus tard)
-    if any(word in text for word in ["fake", "mensonge", "rumeur", "complot", "hoax"]):
-        is_fake = True
-        reliability_score = 0.25
-        reasons = ["Mots suspects de désinformation détectés", "Ton sensationnaliste"]
-    elif len(text) < 30:
-        is_fake = False
-        reliability_score = 0.6
-        reasons = ["Texte trop court pour analyse fiable"]
-    else:
-        is_fake = False
-        reliability_score = 0.78
-        reasons = ["Aucun indicateur majeur de fake news"]
-
-    return {
-        "is_fake": is_fake,
-        "reliability_score": reliability_score,
-        "reasons": reasons,
-        "status": "success"
-    }
+    """Fake News Detector - NanashiOS. Heuristique + transformers si dispo."""
+    text = input_data.get("text", "")
+    if not text.strip():
+        return {"is_fake": False, "confidence": 0.5, "status": "success"}
+    try:
+        from transformers import pipeline
+        clf = pipeline("text-classification", model="mrm8488/bert-tiny-finetuned-fake-news-detection", device=-1)
+        result = clf(text[:512])[0]
+        is_fake = result["label"].upper() == "FAKE"
+        return {"is_fake": is_fake, "confidence": round(result["score"], 3), "status": "success"}
+    except Exception:
+        SENSATIONAL = ["choc","incroyable","révélation","secret","scandale","complot","exclusif","urgent"]
+        score = sum(1 for w in SENSATIONAL if w in text.lower()) / len(SENSATIONAL)
+        return {"is_fake": score > 0.3, "confidence": round(min(score + 0.4, 0.99), 2), "status": "success"}

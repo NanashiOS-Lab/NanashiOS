@@ -1,18 +1,20 @@
 {
   "copyright": "© 2026 NanashiOS-Lab. Tous droits réservés – Nom, logo, slogan protégés",
-"license": "BSL-1.1 - Commercial use restricted until 20 February 2030",
+  "license": "BSL-1.1",
   "id": "pdf-extracteur-v1",
   "name": "PDF Extractor Agent",
+  "name_fr": "Agent Extracteur PDF",
   "description": "Extrait texte, tables et images d’un PDF. Utile pour agents qui traitent documents administratifs, contrats, factures.",
   "author": "NanashiOS-Lab",
   "version": "1.0.0",
-  "license": "BSL-1.1",
   "license_note": "Business Source License 1.1 - Commercial use restricted until 20 February 2030",
   "inputs": [
     {
       "name": "pdf_file",
       "type": "file",
-      "formats": ["pdf"],
+      "formats": [
+        "pdf"
+      ],
       "description": "Fichier PDF à extraire"
     }
   ],
@@ -33,7 +35,15 @@
       "description": "Images extraites"
     }
   ],
-  "dependencies": ["pypdf2>=2.0.0", "tabula-py>=2.0.0", "pillow>=9.0.0"],
+  "dependencies": [
+    "pypdf2>=2.0.0",
+    "tabula-py>=2.0.0",
+    "pillow>=9.0.0"
+  ],
   "price": "free",
-  "tags": ["pdf", "extraction", "document-processing"]
+  "tags": [
+    "pdf",
+    "extraction",
+    "document-processing"
+  ]
 }

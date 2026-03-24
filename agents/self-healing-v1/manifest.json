@@ -3,6 +3,7 @@
   "license": "BSL-1.1",
   "id": "self-healing-v1",
   "name": "Self Healing Agent",
+  "name_fr": "Agent d'Auto-Réparation",
   "description": "Détecte ses propres erreurs, bugs ou dysfonctionnements et tente de les corriger automatiquement. Vrai agent autonome et résilient.",
   "author": "NanashiOS-Lab",
   "version": "1.0.0",

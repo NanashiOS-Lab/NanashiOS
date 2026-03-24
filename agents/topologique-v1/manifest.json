@@ -1,11 +1,12 @@
-{"copyright": "© 2026 NanashiOS-Lab. Tous droits réservés – Nom, logo, slogan protégés",
-"license": "BSL-1.1 - Commercial use restricted until 20 February 2030",
+{
+  "copyright": "© 2026 NanashiOS-Lab. Tous droits réservés – Nom, logo, slogan protégés",
+  "license": "BSL-1.1",
   "id": "topologique-v1",
   "name": "Topology Analyzer Agent",
+  "name_fr": "Agent Analyseur de Topologie",
   "description": "Analyse et manipule des structures topologiques (graphes, réseaux, relations spatiales) dans données, code ou images. Utile pour agents qui travaillent sur réseaux neuronaux ou graphes de connaissances.",
   "author": "NanashiOS-Lab",
   "version": "1.0.0",
-  "license": "BSL-1.1",
   "license_note": "Business Source License 1.1 - Commercial use restricted until 20 February 2030",
   "inputs": [
     {
@@ -26,7 +27,16 @@
       "description": "Graphe visualisé (optionnel)"
     }
   ],
-  "dependencies": ["networkx>=3.0.0", "matplotlib>=3.7.0"],
+  "dependencies": [
+    "networkx>=3.0.0",
+    "matplotlib>=3.7.0"
+  ],
   "price": "free",
-  "tags": ["topology", "graph-analysis", "networks", "spatial", "advanced"]
+  "tags": [
+    "topology",
+    "graph-analysis",
+    "networks",
+    "spatial",
+    "advanced"
+  ]
 }

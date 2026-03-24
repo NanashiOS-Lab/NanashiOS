@@ -1,28 +1,38 @@
 def run(input_data):
-    """
-    Patent-Drafter-v1 - NanashiOS
-    Rédige une description de brevet conforme OEB/INPI
-    """
-    description = input_data.get("invention_description", "Aucune description fournie.")
-    claims = input_data.get("claims", "")
+    """Patent Drafter - NanashiOS. Génère un squelette de brevet."""
+    idea = input_data.get("idea", "")
+    inventor = input_data.get("inventor", "NanashiOS-Lab")
+    domain = input_data.get("domain", "Intelligence Artificielle")
+    if not idea.strip():
+        return {"patent_draft": "", "status": "success"}
+    draft = f"""DEMANDE DE BREVET - NanashiOS Patent Drafter v1
+═══════════════════════════════════════════════════
 
-    draft = f"""DESCRIPTION DE BREVET (OEB / INPI)
+TITRE : {idea.upper()[:80]}
 
-État de la technique :
-{description}
+INVENTEUR(S) : {inventor}
+DOMAINE TECHNIQUE : {domain}
+DATE : 2026
 
-Revendications principales :
-{claims or 'À rédiger selon les règles OEB/INPI'}
+1. CHAMP DE L'INVENTION
+   La présente invention concerne {idea.lower()}.
 
-Nouveauté et activité inventive :
-À évaluer selon les critères de brevetabilité.
+2. ART ANTÉRIEUR
+   Les solutions existantes présentent des limitations en termes de performance,
+   souveraineté des données et adaptabilité locale.
 
-Note : Ce draft est généré automatiquement par NanashiOS. Il doit être revu par un professionnel du droit."""
+3. RÉSUMÉ DE L'INVENTION
+   L'invention propose une méthode et un système permettant {idea.lower()}
+   de manière souveraine, locale et sans recours au cloud.
 
-    patentability_score = 0.65  # Exemple simple
+4. DESCRIPTION DÉTAILLÉE
+   [À compléter par l'inventeur avec les étapes techniques précises]
 
-    return {
-        "draft": draft,
-        "patentability_score": patentability_score,
-        "status": "success"
-    }
+5. REVENDICATIONS
+   1. Système permettant {idea.lower()} caractérisé en ce qu'il opère localement.
+   2. Procédé selon la revendication 1, caractérisé par l'absence de transfert de données.
+
+6. ABRÉGÉ
+   {idea}. Application locale souveraine. Inventeur : {inventor}.
+"""
+    return {"patent_draft": draft, "title": idea[:80], "inventor": inventor, "status": "success"}
